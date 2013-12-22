@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= content_for?(:title) ? yield(:title) : "Beatfuel" %></title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+
+  <!-- Google Font -->
+  <%= stylesheet_link_tag 'http://fonts.googleapis.com/css?family=Open+Sans:400,700,800,600', 'application', media: 'all' %>
+  <%= stylesheet_link_tag 'http://fonts.googleapis.com/css?family=Marck+Script', 'application', media: 'all' %>
+  <%= stylesheet_link_tag 'http://fonts.googleapis.com/css?family=Lobster+Two:700', 'application', media: 'all' %>
+
+  <!-- Font Awesome -->
+  <%= stylesheet_link_tag '//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css', 'application', media: 'all' %>
+
+  <!-- HTML5 shim, for IE6-8 support of HTML elements -->
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+</head>
+<body>
+<%= render 'shared/nav' %>
+
+<header>
+  <section class="vert-text">
+    <%= yield :header %>
+  </section>
+</header>
+
+<%= yield %>
+
+<%= render 'shared/footer' %>
+</body>
+</html>

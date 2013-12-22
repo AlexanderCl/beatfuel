@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" hash="3540715868">
+    <data-source source="LOCAL" name="Rails beatfuel: development" uuid="2585c6cc-6cdd-45bc-aa28-369913a8592a">
+      <driver-ref>postgresql</driver-ref>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql:beatfuel_development</jdbc-url>
+      <user-name>postgres</user-name>
+      <user-password>dfc9dfc5dfc7dfc8dfc5df9bdf98df99</user-password>
+      <libraries />
+    </data-source>
+    <data-source source="LOCAL" name="Rails beatfuel: test" uuid="ef958c60-6a53-4015-86c8-3e5306f9d88c">
+      <driver-ref>postgresql</driver-ref>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql:beatfuel_test</jdbc-url>
+      <user-name>postgres</user-name>
+      <user-password>dfc9dfc5dfc7dfc8dfc5df9bdf98df99</user-password>
+      <libraries />
+    </data-source>
+    <data-source source="LOCAL" name="Rails beatfuel: production" uuid="316ab17b-1fdf-4e38-923f-f38117f8201d">
+      <driver-ref>postgresql</driver-ref>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql:beatfuel_production</jdbc-url>
+      <user-name>postgres</user-name>
+      <user-password>dfc9dfc5dfc7dfc8dfc5df9bdf98df99</user-password>
+      <libraries />
+    </data-source>
+  </component>
+</project>
+
