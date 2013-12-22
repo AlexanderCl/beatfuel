@@ -16,10 +16,14 @@
           <a href="#">Home</a>
         </li>
         <li>
-          <a href="#">Overzicht artiesten</a>
+          <%= link_to "Overzicht artiesten", users_path %>
         </li>
         <li>
-          <a id="fblogin" title="Login" href="#">Inloggen</a>
+          <% if current_user %>
+            <a id="fblogin" title="Login" href="/signout">Uitloggen</a>
+          <% else %>
+              <a id="fblogin" title="Login" href="/auth/facebook">Inloggen</a>
+          <% end %>
         </li>
       </ul>
     </div>
