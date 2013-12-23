@@ -18,13 +18,16 @@
         <li>
           <%= link_to "Overzicht artiesten", users_path %>
         </li>
-        <li>
-          <% if current_user %>
-            <a id="fblogin" title="Login" href="/signout">Uitloggen</a>
-          <% else %>
-              <a id="fblogin" title="Login" href="/auth/facebook">Inloggen</a>
-          <% end %>
-        </li>
+        <% if current_user %>
+            <li>
+              <a id="sign_out" href="/signout" role="button" alt="sign out">sign out</a>
+              Welcome <strong><%= current_user.name %></strong>!
+            </li>
+        <%else%>
+            <li>
+              <a id="sign_in" href="/auth/facebook" role="button" alt="sign out">sign in</a>
+            </li>
+        <%end%>
       </ul>
     </div>
   </div>
