@@ -2,10 +2,12 @@
     Maak connecties &amp; ontdek je kansen - Beatfuel.be
 <% end %>
 <% content_for :header do %>
-    <h1>Maak Connecties & ontdek je kansen</h1>
+    <h1>Maak connecties & ontdek je kansen</h1>
     <h2>Bereik meer<em> fans</em>, krijg meer<em> draaitijd</em> &amp; geniet van je succes!</h2>
-    <a class="btn btn-normal" href="#about">ONTDEK MEER</a>
-    <a class="btn btn-blue" href="#register">REGISTREER NU</a>
+    <a class="btn btn-normal" href="#about">Ontdek meer</a>
+    <% if !current_user %>
+    <a class="btn btn-blue" href="#register">Registreer nu</a>
+    <% end %>
 <% end %>
 
 <!-- Intro -->
@@ -14,7 +16,7 @@
     <div class="row">
       <div class="col-md-6 col-md-offset-3 text-center">
         <h1>Ontdek meer over Beatfuel</h1>
-        <h3 class="eyecatch">Startup-DJ helpen, dat is onze bedoeling...</h3>
+        <h3 class="eyecatch">Startup-DJ's helpen, dat is onze bedoeling...</h3>
         <hr/>
       </div>
       <div class="col-lg-6 col-md-6">
@@ -23,7 +25,7 @@
           Upload uw Beatfuel Mixtapes
         </h3>
         <p>
-          Beatfuel laat toe om uw eigen mixtapes up te loaden zodat deze beschikbaar worden voor het grote publiek. Op deze manier kunnen anderen uw mixtape beoordelen en word u waarschijnlijk sneller aangesproken...
+          Beatfuel laat toe om uw eigen mixtapes up te loaden zodat deze beschikbaar worden voor het grote publiek. Op deze manier kunnen anderen uw mixtapes beoordelen en bereikt u een groter publiek.
         </p>
       </div>
 
@@ -79,42 +81,29 @@
   </div>
 </div>
 <!-- /Callout -->
-
+<%= javascript_include_tag 'quotes' %>
 
 <!-- Register -->
+<% if !current_user %>
 <div id="register" class="register">
   <div class="container">
     <div class="row">
       <div class="col-lg-12">
         <div class="col-md-12 text-center">
-          <h1>Meteen registreren? Het kan!</h1>
+          <h1>Sluit je aan bij de community</h1>
+          <h2>Aanmelden neemt minder dan 2 minuten in beslag - en het is gratis</h2>
           <hr>
         </div>
 
         <div class="row">
           <div class="col-lg-6 col-lg-offset-3">
-            <form role="form" method="post" action="#">
-              <input type="hidden" name="recipient" value="#">
-              <input type="hidden" name="subject" value="#">
-              <input type="hidden" name="redirect" value="#">
-
-              <div class="form-group">
-                <label for="email"><i class="fa fa-star"></i> Email:</label>
-                <input class="form-control" type="email" name="email" placeholder="info@example.com" required />
-                <span class="form_hint">Gelieve een geldig emailadress in te vullen</span>
-              </div>
-
-              <div class="form-group">
-                <label for="name"><i class="fa fa-user"></i> Naam:</label>
-                <input class="form-control" type="text" name="name" placeholder="John Doe" required />
-              </div>
-
-              <div class="clearfix"></div>
-              <div class="form-group">
-                <input class="btn btn-default btn-lg btn-register" TYPE="Submit" formaction="Register_Complete1.html" VALUE="Registreer">
-                <input class="btn btn-default btn-lg btn-register" TYPE="Submit" formaction="#" VALUE="Registreer via Facebook">
-              </div>
-            </form>
+            <h3>De voordelen van aanmelden met Facebook</h3>
+            <ul>
+              <li>Je hoeft geen extra login en paswoord te onthouden</li>
+              <li>Je logt in met één simpele muisklik</li>
+              <li>Je ziet meteen wie van je Facebook-vrienden ook actief is op Beatfuel</li>
+            </ul>
+            <a class="btn btn-blue fb_sign_in" href="/auth/facebook"><i class="fa fa-facebook"></i> Registreer nu met Facebook</a>
           </div>
 
         </div>
@@ -122,44 +111,39 @@
     </div>
   </div>
 </div>
+<% end %>
 
 <!-- stats -->
 <div id="stats" class="stats">
   <div class="container">
-    <div class="row">
-      <div class="col-md-6 col-md-offset-3 text-center">
-        <h1>Beatfuel statistieken</h1>
-        <hr>
-      </div>
-    </div>
     <div class="row">
       <!--Als je ze smaller tegen elkaar wil gebruik je md2 en zet je ook een col-md-offset-2 voor margin ;)-->
       <div class="col-md-3 text-center">
         <div class="service-item">
           <i class="service-icon fa fa-user"></i>
           <h4>Gebruikers</h4>
-          <p class="statsinfo">10242</p>
-        </div>
-      </div>
-      <div class="col-md-3 text-center">
-        <div class="service-item">
-          <i class="service-icon fa fa-globe"></i>
-          <h4>Site views</h4>
-          <p class="statsinfo">1247885</p>
+          <p class="statsinfo"><%= current_users %></p>
         </div>
       </div>
       <div class="col-md-3 text-center">
         <div class="service-item">
           <i class="service-icon fa fa-headphones"></i>
           <h4>Mixtapes</h4>
-          <p class="statsinfo">2548</p>
+          <p class="statsinfo"><%= current_mixtapes %></p>
         </div>
       </div>
       <div class="col-md-3 text-center">
         <div class="service-item">
-          <i class="service-icon fa fa-check"></i>
-          <h4>Boekingen</h4>
-          <p class="statsinfo">6584</p>
+          <i class="service-icon fa fa-thumbs-o-up"></i>
+          <h4>Recommendaties</h4>
+          <p class="statsinfo"><%= current_recommendations %></p>
+        </div>
+      </div>
+      <div class="col-md-3 text-center">
+        <div class="service-item">
+          <i class="service-icon fa fa-heart"></i>
+          <h4>Donaties</h4>
+          <p class="statsinfo">[DONATIES]</p>
         </div>
       </div>
     </div>

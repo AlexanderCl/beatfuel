@@ -1,0 +1,1 @@
+!function(){function e(){++i,t.eq(i%t.length).fadeIn(3e3).delay(3e3).fadeOut(3e3,e)}var t=$(".quote"),i=-1;e()}(),function(){function e(){++i,t.eq(i%t.length).fadeIn(3e3).delay(3e3).fadeOut(3e3,e)}var t=$(".author"),i=-1;e()}();
