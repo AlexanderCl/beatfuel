@@ -2,12 +2,13 @@ class User < ActiveRecord::Base
   has_many :mixtapes
   has_many :recommendations
 
-  validates :musicgenre, :about, :slogan, :presence => true
-  validates :image_url, :format => {
-      :with => %r{\.(gif|jpg|png)$}i,
-      :message => 'Must be a URL for GIF, JPG or PNG image!'
+  #validates :musicgenre, :about, :slogan, :presence => true
+  #validates :image_url, :format => {
+   #   :with => %r{\.(gif|jpg|png)$}i,
+    #  :message => 'Must be a URL for GIF, JPG or PNG image!'
+  #}
+ # validates_length_of :about, :minimum => 50, :maximum => 750, :allow_blank => false
 
-  }
 
   def self.from_omniauth(auth)
     where(auth.slice(:provider, :uid)).first_or_initialize.tap do |user|
@@ -31,6 +32,6 @@ class User < ActiveRecord::Base
     recommendations.create(user_id: user, amount: 1)
   end
 
-  validates:
+
 
 end

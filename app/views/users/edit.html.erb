@@ -14,7 +14,8 @@
 
         <div class="col-md-6 col-md-offset-2">
         <h1><%= @user.name %></h1>
-        <h2>Awesome music as always!</h2>
+          <%= render 'form' %>
+        <h2>Freaking Awesome</h2>
         <ul class="left">
           <li><i class="fa fa-compass"></i> <%= @user.location %></li>
           <li><i class="fa fa-tags"></i> House, Techno</li>
@@ -24,6 +25,7 @@
                 0
             <%end%> Recommendaties</li>
           <li>
+
             <a class="btn btn-edit" href="#"> <i class="fa fa-pencil"></i> Wijzigen</a>
           </li>
         </ul>
