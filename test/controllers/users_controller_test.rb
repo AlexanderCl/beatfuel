@@ -3,6 +3,12 @@ require 'test_helper'
 class UsersControllerTest < ActionController::TestCase
   setup do
     @user = users(:one)
+    @update = {
+        :slogan => 'This is freaking awesome',
+        :musicgenre => 'House, dubstep',
+        :image_url => 'lorem.jpg',
+        :about => 'Pellentesque at placerat neque, scelerisque tristique risus. Aenean eleifend interdum luctus. In ac venenatis lectus, id rhoncus ligula. Pellentesque at placerat neque, scelerisque tristique risus. '
+    }
   end
 
   test "should get index" do
