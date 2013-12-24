@@ -17,10 +17,10 @@ class User < ActiveRecord::Base
 
   def add_recommendation(user)
     # Grab our recommendation from the DB.
-    #recommendation = recommendations.find_by!(user_id: user)
-    #recommendation.increment!(:amount)
+    recommendation = recommendations.find_by!(user_id: user)
+    recommendation.increment!(:amount)
 
-  #rescue ActiveRecord::RecordNotFound
-    #recommendations.create(user_id: user, amount: 1)
+  rescue ActiveRecord::RecordNotFound
+    recommendations.create(user_id: user, amount: 1)
   end
 end

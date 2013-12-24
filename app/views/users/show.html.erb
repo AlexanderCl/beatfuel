@@ -16,7 +16,13 @@
           <ul class="left">
             <li><i class="fa fa-compass"></i> <%= @user.location %></li>
             <li><i class="fa fa-tags"></i> House, Techno</li>
-            <li><i class="fa fa-thumbs-up"></i>  Recommendaties</li>
+            <li><i class="fa fa-thumbs-up"></i>
+              <% if !@user.recommendations.blank? %>
+                  <%= @user.recommendations.first.amount %>
+              <%else%>
+                  0
+              <%end%> Recommendaties
+             </li>
           </ul>
         </div>
 
@@ -28,16 +34,12 @@
             <li>
               <a class="btn btn-blue" href="#"> <i class="fa fa-twitter"></i> Volg via Twitter</a>
             </li>
-            <li>
-              <a class="btn btn-green" href="#"> <i class="fa fa-pencil"></i> Boek Avicii nu!</a>
-            </li>
             <% if current_user %>
             <li>
               <%= form_tag recommendations_path, :id => 'recommend' do %>
                   <%= hidden_field_tag 'user_id', @user.id %>
-                  <%= link_to "Aanraden", "#", :onclick => "$('#recommend').submit()" %>
+                  <%= link_to '<i class="fa fa-heart"></i> Aanraden'.html_safe, "#", :onclick => "$('#recommend').submit()", :class => "btn btn-yellow" %>
               <% end %>
-              <a class="btn btn-yellow" href="#"> <i class="fa fa-heart"></i> Aanraden!</a>
             </li>
             <% end %>
           </ul>
@@ -68,52 +70,6 @@
           <img src="img/DJ_profiel.png"/>
           <img src="img/DJ_profiel.png"/>
 
-          <h2>Boekingen</h2>
-
-          <table id="boekingen">
-            <tbody>
-            <tr>
-              <th><i class="fa fa-calendar-o"></i> Datum</th>
-              <th><i class="fa fa-compass"></i> Locatie</th>
-              <th><i class="fa fa-clock-o"></i> Tijdstip</th>
-            </tr>
-            <tr class="alt">
-              <td>16/11/2013</td>
-              <td>Café Luxxx</td>
-              <td>21:00 - 23:30</td>
-            </tr>
-
-            <tr>
-              <td>16/11/2013</td>
-              <td>Café Luxxx</td>
-              <td>21:00 - 23:30</td>
-            </tr>
-
-            <tr class="alt">
-              <td>16/11/2013</td>
-              <td>Café Luxxx</td>
-              <td>21:00 - 23:30</td>
-            </tr>
-
-            <tr>
-              <td>16/11/2013</td>
-              <td>Café Luxxx</td>
-              <td>21:00 - 23:30</td>
-            </tr>
-
-            <tr class="alt">
-              <td>16/11/2013</td>
-              <td>Café Luxxx</td>
-              <td>21:00 - 23:30</td>
-            </tr>
-
-            <tr>
-              <td>16/11/2013</td>
-              <td>Café Luxxx</td>
-              <td>21:00 - 23:30</td>
-            </tr>
-            </tbody>
-          </table>
           <div class="clear"></div>
         </div>
         <div class="col-md-5 col-md-offset-1">
