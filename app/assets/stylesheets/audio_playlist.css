@@ -1,0 +1,89 @@
+@charset "utf-8";
+
+
+a {
+    color: #333333;
+    text-decoration: none;
+}
+
+ol {
+    border-top: 1px solid #CCCCCC;
+    color: #CCCCCC;
+    font-size: 0.9em;
+    list-style: decimal-leading-zero inside none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+ol li {
+    border-bottom: 1px solid #CCCCCC;
+    cursor: pointer;
+    margin: 0;
+    padding: 9px 2px 10px;
+    position: relative;
+}
+ol li a {
+    display: block;
+    padding: 0 0 0 20px;
+    text-indent: -3.3ex;
+}
+li.playing {
+    color: #333333;
+    text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.3);
+}
+li.playing a {
+    color: #46abf0;
+	font-weight:bold;
+}
+li.playing:before {
+    color: #46abf0;
+    content: "♬";
+    font-size: 13px;
+    height: 14px;
+    left: -24px;
+    line-height: 14px;
+    margin: 0;
+    padding: 3px;
+    position: absolute;
+    text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.2);
+    top: 9px;
+    width: 14px;
+}
+#shortcuts {
+    background: none repeat scroll 0 0 rgba(240, 240, 240, 0.7);
+    bottom: 0;
+    color: #666666;
+    font-size: 0.9em;
+    margin: 60px 0 0;
+    padding: 20px 20px 15px;
+    position: fixed;
+    width: 100%;
+}
+#shortcuts div {
+    margin: 0 auto;
+    width: 460px;
+}
+#shortcuts h1 {
+    margin: 0 0 6px;
+}
+#shortcuts p {
+    margin: 0 0 18px;
+}
+#shortcuts em {
+    background: none repeat scroll 0 0 #D3D3D3;
+    border-radius: 4px;
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+    font-style: normal;
+    left: -3px;
+    padding: 3px 9px;
+    position: relative;
+}
+@media screen and (max-device-width: 480px) {
+#wrapper {
+    left: -3%;
+    position: relative;
+}
+#shortcuts {
+    display: none;
+}
+}

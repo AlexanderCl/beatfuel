@@ -32,8 +32,19 @@ span.small {
     text-transform: uppercase;
 }
 
+div ul.nav-pills li a.active {
+    background: #428bca;
+    color: #fff;
+}
+
 .nav-pills > li > a:hover {
-    background: rgba(66, 139, 202, 0.1);
+    background: none;
+}
+
+nav .brand img { margin-top: 18px;}
+
+nav ul {
+    margin-top: 20px;
 }
 /* Global Styles */
 
@@ -164,6 +175,7 @@ body {
     border-radius: 0;
     font-family: 'Open Sans', sans-serif;
     font-weight: 600;
+    text-transform: uppercase;
 }
 
 .btn-normal:hover{
@@ -564,6 +576,7 @@ i.service-icon-active {
 
 footer {
     height:auto;
+    padding-top: 20px;
     background-color:white;
     border-top: thick solid #CCCCCC;
 }

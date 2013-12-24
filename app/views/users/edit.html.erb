@@ -1,6 +1,86 @@
-<h1>Editing user</h1>
+<%= stylesheet_link_tag 'audio_playlist', 'application', media: 'all' %>
+<%= javascript_include_tag "audio.min", "data-turbolinks-track" => true %>
+<%= javascript_include_tag "playlist", "data-turbolinks-track" => true %>
+<% content_for :title do %>
+    Bewerk profiel - Beatfuel.be
+<% end %>
+<% content_for :header do %>
+    <section class="profile">
 
-<%= render 'form' %>
+      <div id="slidingDiv" class="toggleDiv">
+        <div class="col-md-4">
+          <%= image_tag("http://graph.facebook.com/#{@user.uid}/picture?type=large", :class => "img-responsive border") %>
+        </div>
 
-<%= link_to 'Show', @user %> |
-<%= link_to 'Back', users_path %>
+        <div class="col-md-6 col-md-offset-2">
+        <h1><%= @user.name %></h1>
+        <h2>Awesome music as always!</h2>
+        <ul class="left">
+          <li><i class="fa fa-compass"></i> <%= @user.location %></li>
+          <li><i class="fa fa-tags"></i> House, Techno</li>
+          <li><i class="fa fa-thumbs-up"></i> <% if !@user.recommendations.blank? %>
+                <%= @user.recommendations.first.amount %>
+            <%else%>
+                0
+            <%end%> Recommendaties</li>
+          <li>
+            <a class="btn btn-edit" href="#"> <i class="fa fa-pencil"></i> Wijzigen</a>
+          </li>
+        </ul>
+      </div>
+        <div class="clearfix"></div>
+      </div>
+
+    </section>
+<% end %>
+<div id="profile_about" class="profile_about">
+  <div class="container">
+    <div class="row">
+      <!--Als je ze smaller tegen elkaar wil gebruik je md2 en zet je ook een col-md-offset-2 voor margin ;)-->
+      <div class="col-md-12">
+        <div class="col-md-6">
+          <h1>Over Avicii</h1>
+          <p>Pellentesque at placerat neque, scelerisque tristique risus. Aenean eleifend interdum luctus. In ac venenatis lectus, id rhoncus ligula.
+            Pellentesque at placerat neque, scelerisque tristique risus. Aenean eleifend interdum luctus. In ac venenatis lectus, id rhoncus ligula.
+            Pellentesque at placerat neque, scelerisque tristique risus. Aenean eleifend interdum luctus. In ac venenatis lectus, id rhoncus ligula.Pellentesque at placerat neque, scelerisque tristique risus. Aenean eleifend interdum luctus. In ac venenatis lectus, id rhoncus ligula.Pellentesque at placerat neque, scelerisque tristique risus. Aenean eleifend interdum luctus. In ac venenatis lectus, id rhoncus ligula.Pellentesque at placerat neque, scelerisque tristique risus. Aenean eleifend interdum luctus. In ac venenatis lectus, id rhoncus ligula.
+            Pellentesque at placerat neque, scelerisque tristique risus. Aenean eleifend interdum luctus. In ac venenatis lectus, id rhoncus ligula.</p>
+          <a class="btn btn-edit" href="#"> <i class="fa fa-pencil"></i> Wijzigen</a>
+          <h2>Afbeeldingen</h2>
+          <img src="img/DJ_profiel.png"/>
+          <img src="img/DJ_profiel.png"/>
+          <img src="img/DJ_profiel.png"/>
+          <img src="img/DJ_profiel.png"/>
+          <img src="img/DJ_profiel.png"/>
+          <img src="img/DJ_profiel.png"/>
+          <img src="img/DJ_profiel.png"/>
+          <a href="#"><img src="img/add_picture.png"/></a>
+          <div class="clear"></div>
+        </div>
+        <div class="col-md-5 col-md-offset-1">
+          <h1>Avicii's Mixtapes</h1>
+
+
+          <div id="audiojs_wrapper0" classname="audiojs" class="audiojs  ">
+            <audio src="http://s3.amazonaws.com/audiojs/02-juicy-r.mp3" preload=""></audio>
+            <div class="play-pause"><p class="play"></p><p class="pause"></p><p class="loading"></p><p class="error"></p>
+            </div><div class="scrubber"><div style="width: 100%;" class="progress"></div><div style="width: 100%;" class="loaded"></div>      </div>
+            <div class="time"><em class="played">00:01</em>/<strong class="duration">03:56</strong></div>
+            <div class="error-message"></div></div>
+          <ol>
+            <li class="playing"><a href="#" data-src="sounds/Avicii - Wake Me Up (Official Video).mp3">Avicii - Wake Me Up</a></li>
+            <li><a href="#" data-src="sounds/Avicii - Hey Brother (Lyric).mp3">Avicii - Hey Brother</a></li>
+            <li><a href="#" data-src="sounds/Avicii - Hey Brother (Lyric).mp3">Avicii - Hey Brother</a></li>
+            <li><a href="#" data-src="sounds/Avicii - Hey Brother (Lyric).mp3">Avicii - Hey Brother</a></li>
+            <li><a href="#" data-src="sounds/Avicii - Hey Brother (Lyric).mp3">Avicii - Hey Brother</a></li>
+            <li><a href="#" data-src="sounds/Avicii - Hey Brother (Lyric).mp3">Avicii - Hey Brother</a></li>
+            <li><a href="#" data-src="sounds/Avicii - Hey Brother (Lyric).mp3">Avicii - Hey Brother</a></li>
+            <li><a href="#" data-src="sounds/Avicii - Hey Brother (Lyric).mp3">Avicii - Hey Brother</a></li>
+          </ol>
+          <a class="btn btn-edit" href="#"> <i class="fa fa-plus"></i> Nummer toevoegen</a>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</div>

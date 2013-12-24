@@ -2,43 +2,8 @@
     Overzicht artiesten - Beatfuel.be
 <% end %>
 <% content_for :header do %>
-    <h1>Dj's zoeken...</h1>
-
-    <div class="collapse navbar-collapse navbar-ex1-collapse">
-      <ul class="nav-pills nav navbar pull-left">
-        <li><a href="#">All</a></li>
-        <li class="active"><a href="#">Classical</a></li>
-        <li><a href="#">Country</a></li>
-        <li>
-          <a href="#">Electronic</a>
-        </li>
-        <li>
-          <a href="#">Hip Hop</a>
-        </li>
-        <li>
-          <a href="#">Jazz</a>
-        </li>
-        <li>
-          <a href="#">Metal</a>
-        </li>
-        <li>
-          <a href="#">Pop</a>
-        </li>
-        <li>
-          <a href="#">R&B</a>
-        </li>
-        <li>
-          <a href="#">Reggae</a>
-        </li>
-        <li>
-          <a href="#">Rock</a>
-        </li>
-        <li>
-          <a href="#">House</a>
-        </li>
-      </ul>
-    </div>
-    <h1>Op basis van locatie</h1>
+    <h1>Er werden <%= @users.count %> DJ's bij u in de buurt gevonden</h1>
+    <h2>Verfijn uw zoekactie op basis van locatie</h2>
 
     <div class="collapse navbar-collapse navbar-ex1-collapse">
       <ul class="nav-pills nav navbar pull-left">
@@ -57,32 +22,35 @@
     <select onchange="print_state('state',this.selectedIndex);" id="country" name = "country"></select> <br />
     Regio:
     <select name ="state" id = "state"></select>
-    <script type="text/javascript">print_country("country");
-    </script>
+    <script type="text/javascript">print_country("country");</script>
 <% end %>
 <div id="search" class="search">
   <div class="container">
-    <h1>Er werden <%= @users.count %> DJ's bij u in de buurt gevonden</h1><br>
     <div class="row">
 
       <% @users.each do |user| %>
       <div class="col-md-4">
         <div class="search-item">
           <a href="sounds/Avicii - Wake Me Up (Official Video).mp3" class="sm2_button">
-            <img src="img/DJ_profiel.png" alt="DJ" width="100" height="100"/>
+            <%= image_tag("http://graph.facebook.com/#{user.uid}/picture?type=normal") %>
           </a>
           <ul>
             <li>
-              <i class="search-icon fa fa-user"></i> <%= link_to '[NAAM]', user %>
+              <i class="search-icon fa fa-user"></i> <%= link_to user.name, user %>
             </li>
             <li>
-              <i class="search-icon fa fa-headphones"></i>  11 Mixtapes
+              <i class="search-icon fa fa-headphones"></i>  <%= user.mixtapes.count %> Mixtapes
             </li>
             <li>
-              <i class="search-icon fa fa-thumbs-up"></i>  102 Recommendaties
+              <i class="search-icon fa fa-thumbs-up"></i>
+              <% if !user.recommendations.blank? %>
+              <%= user.recommendations.first.amount %>
+              <%else%>
+              0
+              <%end%> Recommendaties
             </li>
             <li>
-              <i class="search-icon fa fa-check"></i>  56 Boekingen
+              <i class="search-icon fa fa-location-arrow"></i>  <%= user.location %>
             </li>
           </ul>
         </div>
@@ -95,3 +63,4 @@
     </section>
   </div>
 </div>
+<%= javascript_include_tag 'countries' %>
