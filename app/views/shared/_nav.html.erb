@@ -24,7 +24,10 @@
               <a href="#" class="dropdown-toggle" data-toggle="dropdown"><%= current_user.name %> <i class="fa fa-caret-down"></i></a>
               <ul class="dropdown-menu" role="menu">
                 <li>
-                  <a href="#" role="menuitem"><i class="fa fa-user"></i> Mijn profiel</a>
+                  <%= link_to '<i class="fa fa-user"></i> Mijn profiel'.html_safe, user_path(current_user.id) %>
+                </li>
+                <li>
+                  <%= link_to '<i class="fa fa-pencil"></i> Bewerk profiel'.html_safe, edit_user_path(current_user.id) %>
                 </li>
                 <li class="divider"></li>
                 <li>
