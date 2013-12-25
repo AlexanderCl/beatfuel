@@ -1,6 +1,8 @@
 class User < ActiveRecord::Base
   has_many :mixtapes
   has_many :recommendations
+  has_one :user_information
+  accepts_nested_attributes_for :user_information
 
   #validates :musicgenre, :about, :slogan, :presence => true
   #validates :image_url, :format => {

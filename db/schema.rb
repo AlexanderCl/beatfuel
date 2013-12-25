@@ -34,7 +34,7 @@ ActiveRecord::Schema.define(version: 20131224120837) do
   create_table "user_informations", force: true do |t|
     t.integer "user_id"
     t.string  "slogan"
-    t.string  "musicgenre"
+    t.string  "music_genre"
     t.text    "about"
   end
 

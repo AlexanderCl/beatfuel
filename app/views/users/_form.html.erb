@@ -15,6 +15,12 @@
     <div class="field">
       <%= f.label :name %><br>
       <%= f.text_field :name %>
+      <%= f.fields_for @user.user_information do |u| %>
+          <div class="field">
+            <%= u.label :slogan %><br />
+            <%= u.text_field :slogan %>
+          </div>
+      <% end %>
     </div>
 
 
