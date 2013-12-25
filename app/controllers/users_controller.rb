@@ -42,16 +42,9 @@ class UsersController < ApplicationController
   # PATCH/PUT /users/1.json
   def update
     @user = User.find(params[:id])
-    @user.user_information.update(params[:user_information])
-    respond_to do |format|
-      if @user.update(user_params)
-        format.html { redirect_to @user, :notice => "User #{@user.name} was successfully updated." }
-        format.json { head :no_content }
-      else
-        format.html { render action: 'edit' }
-        format.json { render json: @user.errors, status: :unprocessable_entity }
-      end
-    end
+    @user.update_attributes(user_params) ?
+        redirect_to(user_path(@user)) : render(:action => :edit)
+
   end
 
   # DELETE /users/1
@@ -72,6 +65,7 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:name)
+      nested_keys = params.require(:user).fetch(:user_information_attributes, {}).keys
+      params.require(:user).permit(:name,:user_information_attributes => nested_keys)
     end
 end
