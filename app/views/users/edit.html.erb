@@ -5,48 +5,16 @@
     Bewerk profiel - Beatfuel.be
 <% end %>
 <% content_for :header do %>
-    <section class="profile">
+    <h1>Profiel bewerken</h1>
 
-      <div id="slidingDiv" class="toggleDiv">
-        <div class="col-md-4">
-          <%= image_tag("http://graph.facebook.com/#{@user.uid}/picture?type=large", :class => "img-responsive border") %>
-        </div>
-
-        <div class="col-md-6 col-md-offset-2">
-        <h1><%= @user.name %></h1>
-          <%= render 'form' %>
-        <h2>Freaking Awesome</h2>
-        <ul class="left">
-          <li><i class="fa fa-compass"></i> <%= @user.location %></li>
-          <li><i class="fa fa-tags"></i> House, Techno</li>
-          <li><i class="fa fa-thumbs-up"></i> <% if !@user.recommendations.blank? %>
-                <%= @user.recommendations.first.amount %>
-            <%else%>
-                0
-            <%end%> Recommendaties</li>
-          <li>
-
-            <a class="btn btn-edit" href="#"> <i class="fa fa-pencil"></i> Wijzigen</a>
-          </li>
-        </ul>
-      </div>
-        <div class="clearfix"></div>
-      </div>
-
-    </section>
 <% end %>
 <div id="profile_about" class="profile_about">
   <div class="container">
     <div class="row">
-      <!--Als je ze smaller tegen elkaar wil gebruik je md2 en zet je ook een col-md-offset-2 voor margin ;)-->
+
       <div class="col-md-12">
         <div class="col-md-6">
-          <h1>Over Avicii</h1>
-          <p>Pellentesque at placerat neque, scelerisque tristique risus. Aenean eleifend interdum luctus. In ac venenatis lectus, id rhoncus ligula.
-            Pellentesque at placerat neque, scelerisque tristique risus. Aenean eleifend interdum luctus. In ac venenatis lectus, id rhoncus ligula.
-            Pellentesque at placerat neque, scelerisque tristique risus. Aenean eleifend interdum luctus. In ac venenatis lectus, id rhoncus ligula.Pellentesque at placerat neque, scelerisque tristique risus. Aenean eleifend interdum luctus. In ac venenatis lectus, id rhoncus ligula.Pellentesque at placerat neque, scelerisque tristique risus. Aenean eleifend interdum luctus. In ac venenatis lectus, id rhoncus ligula.Pellentesque at placerat neque, scelerisque tristique risus. Aenean eleifend interdum luctus. In ac venenatis lectus, id rhoncus ligula.
-            Pellentesque at placerat neque, scelerisque tristique risus. Aenean eleifend interdum luctus. In ac venenatis lectus, id rhoncus ligula.</p>
-          <a class="btn btn-edit" href="#"> <i class="fa fa-pencil"></i> Wijzigen</a>
+          <%= render 'form' %>
           <h2>Afbeeldingen</h2>
           <img src="img/DJ_profiel.png"/>
           <img src="img/DJ_profiel.png"/>
@@ -59,7 +27,7 @@
           <div class="clear"></div>
         </div>
         <div class="col-md-5 col-md-offset-1">
-          <h1>Avicii's Mixtapes</h1>
+          <h1>Mixtapes</h1>
 
 
           <div id="audiojs_wrapper0" classname="audiojs" class="audiojs  ">

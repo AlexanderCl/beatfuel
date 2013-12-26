@@ -13,12 +13,17 @@
 
 
     <div class="field">
+      <h1>Over jezelf</h1>
       <%= f.label :name %><br>
       <%= f.text_field :name %>
       <%= f.fields_for :user_information do |u| %>
           <div class="field">
             <%= u.label :slogan %><br />
-            <%= u.text_field :slogan %>
+            <%= u.text_field :slogan %><br />
+            <%= u.label :about %><br />
+            <%= u.text_field :about %><br />
+            <%= u.label :music_genre %><br />
+            <%= u.text_field :music_genre %>
           </div>
       <% end %>
     </div>

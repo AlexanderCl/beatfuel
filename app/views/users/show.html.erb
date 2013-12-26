@@ -15,10 +15,10 @@
 
         <div class="col-md-6">
           <h1><%= @user.name %></h1>
-          <h2>Awesome music as always!</h2>
+          <h2><%= @user.user_information.slogan %></h2>
           <ul class="left">
             <li><i class="fa fa-compass"></i> <%= @user.location %></li>
-            <li><i class="fa fa-tags"></i> House, Techno</li>
+            <li><i class="fa fa-tags"></i> <%= @user.user_information.music_genre %></li>
             <li><i class="fa fa-thumbs-up"></i>
               <% if !@user.recommendations.blank? %>
                   <%= @user.recommendations.first.amount %>
@@ -58,11 +58,8 @@
       <!--Als je ze smaller tegen elkaar wil gebruik je md2 en zet je ook een col-md-offset-2 voor margin ;)-->
       <div class="col-md-12">
         <div class="col-md-6">
-          <h1>Over Avicii</h1>
-          <p>Pellentesque at placerat neque, scelerisque tristique risus. Aenean eleifend interdum luctus. In ac venenatis lectus, id rhoncus ligula.
-            Pellentesque at placerat neque, scelerisque tristique risus. Aenean eleifend interdum luctus. In ac venenatis lectus, id rhoncus ligula.
-            Pellentesque at placerat neque, scelerisque tristique risus. Aenean eleifend interdum luctus. In ac venenatis lectus, id rhoncus ligula.Pellentesque at placerat neque, scelerisque tristique risus. Aenean eleifend interdum luctus. In ac venenatis lectus, id rhoncus ligula.Pellentesque at placerat neque, scelerisque tristique risus. Aenean eleifend interdum luctus. In ac venenatis lectus, id rhoncus ligula.Pellentesque at placerat neque, scelerisque tristique risus. Aenean eleifend interdum luctus. In ac venenatis lectus, id rhoncus ligula.
-            Pellentesque at placerat neque, scelerisque tristique risus. Aenean eleifend interdum luctus. In ac venenatis lectus, id rhoncus ligula.</p>
+          <h1>Over <%= @user.name %></h1>
+          <p><%= @user.user_information.about %></p>
           <h2>Afbeeldingen</h2>
           <img src="img/DJ_profiel.png"/>
           <img src="img/DJ_profiel.png"/>
@@ -76,7 +73,7 @@
           <div class="clear"></div>
         </div>
         <div class="col-md-5 col-md-offset-1">
-          <h1>Avicii's Mixtapes</h1>
+          <h1><%= @user.name %>'s Mixtapes</h1>
 
 
           <div id="audiojs_wrapper0" classname="audiojs" class="audiojs  ">
