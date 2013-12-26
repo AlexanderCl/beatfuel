@@ -1,6 +1,11 @@
 class SessionsController < ApplicationController
 
   def create
+    @user = User.find_by_uid!(request.env["omniauth.auth"].uid)
+    session[:user_id] = @user.id
+    redirect_to root_url
+
+  rescue ActiveRecord::RecordNotFound
     user = User.from_omniauth(request.env["omniauth.auth"])
     session[:user_id] = user.id
     redirect_to root_url
