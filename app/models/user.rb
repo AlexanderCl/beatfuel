@@ -4,12 +4,12 @@ class User < ActiveRecord::Base
   has_one :user_information
   accepts_nested_attributes_for :user_information
 
-  #validates :musicgenre, :about, :slogan, :presence => true
+  validates :music_genre, :about, :slogan, :presence => true
   #validates :image_url, :format => {
    #   :with => %r{\.(gif|jpg|png)$}i,
     #  :message => 'Must be a URL for GIF, JPG or PNG image!'
   #}
- # validates_length_of :about, :minimum => 50, :maximum => 750, :allow_blank => false
+ validates_length_of :about, :minimum => 50, :maximum => 750, :allow_blank => false
 
 
   def self.from_omniauth(auth)
@@ -22,6 +22,9 @@ class User < ActiveRecord::Base
       user.oauth_token = auth.credentials.token
       user.oauth_expires_at = Time.at(auth.credentials.expires_at)
       user.save!
+      user.create_user_information
+      user.create_user_information(slogan:"Change this into your personal slogan", about:"Tell us something about yourself", music_genre:"Example: Hiphop, dubstep, house")
+
     end
   end
 
