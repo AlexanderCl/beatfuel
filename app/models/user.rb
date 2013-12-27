@@ -4,14 +4,6 @@ class User < ActiveRecord::Base
   has_one :user_information
   accepts_nested_attributes_for :user_information
 
-  validates :music_genre, :about, :slogan, :presence => true, :on => :update
-  #validates :image_url, :format => {
-   #   :with => %r{\.(gif|jpg|png)$}i,
-    #  :message => 'Must be a URL for GIF, JPG or PNG image!'
-  #}
- #validates_length_of :about, :minimum => 50, :maximum => 750, :allow_blank => false
-
-
   def self.from_omniauth(auth)
     where(auth.slice(:provider, :uid)).first_or_initialize.tap do |user|
       user.provider = auth.provider

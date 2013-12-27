@@ -42,8 +42,11 @@ class UserInformationsController < ApplicationController
   def update
     respond_to do |format|
       if @user_information.update(user_information_params)
+        #flash[:notice] = "User #{@user.name} updated"
+        #De flash notice zou moeten werken, maar naar waar word er een redirect gedaan? --> hier moet dan die notice komen zodat de boodschap zichtbaar is.
         format.html { redirect_to @user_information, notice: 'User information was successfully updated.' }
         format.json { head :no_content }
+
       else
         format.html { render action: 'edit' }
         format.json { render json: @user_information.errors, status: :unprocessable_entity }
