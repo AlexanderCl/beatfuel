@@ -19,7 +19,6 @@ class User < ActiveRecord::Base
         user.create_user_information(slogan:"Change this into your personal slogan", about:"Tell us something about yourself", music_genre:"Example: Hiphop, dubstep, house")
       end
 
-
     end
   end
 

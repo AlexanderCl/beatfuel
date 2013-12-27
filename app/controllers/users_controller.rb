@@ -43,8 +43,7 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     @user.update_attributes(user_params) ?
-        redirect_to(user_path(@user)) : render(:action => :edit)
-
+        redirect_to(user_path(@user)) : render(action: 'edit')
   end
 
   # DELETE /users/1

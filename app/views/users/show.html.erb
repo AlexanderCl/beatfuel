@@ -74,26 +74,27 @@
           <div class="clear"></div>
         </div>
         <div class="col-md-5 col-md-offset-1">
-          <h1><%= @user.name %>'s Mixtapes</h1>
+          <h1>Mixtapes</h1>
 
 
+          <% if !@user.mixtapes.blank? %>
           <div id="audiojs_wrapper0" classname="audiojs" class="audiojs  ">
-            <audio src="http://s3.amazonaws.com/audiojs/02-juicy-r.mp3" preload=""></audio>
+            <audio src="/mixtapes/<%= @user.uid %>/<%= @user.mixtapes.first.src %>" preload=""></audio>
             <div class="play-pause"><p class="play"></p><p class="pause"></p><p class="loading"></p><p class="error"></p>
             </div><div class="scrubber"><div style="width: 100%;" class="progress"></div><div style="width: 100%;" class="loaded"></div>      </div>
             <div class="time"><em class="played">00:01</em>/<strong class="duration">03:56</strong></div>
             <div class="error-message"></div></div>
           <ol>
-            <li class="playing"><a href="#" data-src="sounds/Avicii - Wake Me Up (Official Video).mp3">Avicii - Wake Me Up</a></li>
-            <li><a href="#" data-src="sounds/Avicii - Hey Brother (Lyric).mp3">Avicii - Hey Brother</a></li>
-            <li><a href="#" data-src="sounds/Avicii - Hey Brother (Lyric).mp3">Avicii - Hey Brother</a></li>
-            <li><a href="#" data-src="sounds/Avicii - Hey Brother (Lyric).mp3">Avicii - Hey Brother</a></li>
-            <li><a href="#" data-src="sounds/Avicii - Hey Brother (Lyric).mp3">Avicii - Hey Brother</a></li>
-            <li><a href="#" data-src="sounds/Avicii - Hey Brother (Lyric).mp3">Avicii - Hey Brother</a></li>
-            <li><a href="#" data-src="sounds/Avicii - Hey Brother (Lyric).mp3">Avicii - Hey Brother</a></li>
-            <li><a href="#" data-src="sounds/Avicii - Hey Brother (Lyric).mp3">Avicii - Hey Brother</a></li>
+            <% @user.mixtapes.each do |mix| %>
+                <li><a href="#" data-src="/mixtapes/<%= @user.uid %>/<%= mix.src %>"><%= mix.title %></a></li>
+            <% end %>
           </ol>
+          <% else %>
+                Geen mixtapes beschikbaar
+          <% end %>
+
         </div>
+
       </div>
 
     </div>

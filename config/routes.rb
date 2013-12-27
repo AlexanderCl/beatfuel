@@ -1,5 +1,6 @@
 Beatfuel::Application.routes.draw do
   resources :users
+  resources :upload
   resources :recommendations
 
   get "pages/home"
