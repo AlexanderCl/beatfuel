@@ -7,3 +7,4 @@ Beatfuel::Application.initialize!
 # Variables
 ENV['FACEBOOK_APP_ID'] = 'devuser'
 ENV['FACEBOOK_SECRET'] = 'devpass'
+

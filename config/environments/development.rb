@@ -28,4 +28,6 @@ Beatfuel::Application.configure do
   config.assets.debug = true
 
   OpenSSL::SSL::VERIFY_PEER = OpenSSL::SSL::VERIFY_NONE
+
+  Paperclip.options[:command_path] = "/usr/local/bin"
 end

@@ -16,10 +16,14 @@ class UsersController < ApplicationController
   def new
     @user = User.new
     @user.user_information.build
+    #5 keer het veld zien om afbeelding toe te voegen doe je zo
+    #5.times {@user.assets.build}
   end
 
   # GET /users/1/edit
   def edit
+   #5 keer het veld zien om afbeelding toe te voegen doe je zo
+   # 5.times {@user.assets.build}
   end
 
   # POST /users
@@ -66,5 +70,6 @@ class UsersController < ApplicationController
     def user_params
       nested_keys = params.require(:user).fetch(:user_information_attributes, {}).keys
       params.require(:user).permit(:name,:user_information_attributes => nested_keys)
+      #normaal moet hier ook de param :image meegegeven worden maar dan krijg ik foutmelding!!!
     end
 end

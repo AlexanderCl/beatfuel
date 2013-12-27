@@ -1,4 +1,4 @@
-<%= form_for(@user) do |f| %>
+<%= form_for @user, :html => {:multipart => true} do |f| %>
   <% if @user.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
@@ -26,10 +26,45 @@
             <%= u.text_field :music_genre %>
           </div>
       <% end %>
+
+
+      </div>
+
+    <!--Dit zijn normaal de 5 velden die gegenereerd worden om afbeelding toe te voegen -->
+
+    <div class="paperclipStuff">
+        <h2>Afbeeldingen</h2>
+        <%= f.fields_for :assets do |asset| %>
+            <% if asset.object.new_record? %>
+                <div class="field">
+                  <%= asset.file_field :image %><br />
+                </div>
+            <%end%>
+        <% end %>
+      </div>
+    <!--Controle of het veld al bestaat -->
+    <div class="paperclipExistingFiles">
+     <%= f.fields_for :assets do |asset| %>
+          <% unless asset.object.new_record? %>
+      <div class="thumbnail">
+        <%= link_to(image_tag(asset.object.image.url(:thumb), asset.object.image.url(:original)))%>
+      </div>
+      <%end%>
+    <%end%>
     </div>
 
+    <!--Dit is een simpel veld ook voor afbeelding toe te voegen! -->
+    <div class="test">
+      <p>
+        <%= f.file_field :image%>
+      </p>
+    </div>
 
   <div class="actions">
     <%= f.submit %>
   </div>
-<% end %>
+
+
+
+<%end%>
+

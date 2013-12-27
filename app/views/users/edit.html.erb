@@ -15,7 +15,10 @@
       <div class="col-md-12">
         <div class="col-md-6">
           <%= render 'form' %>
-          <h2>Afbeeldingen</h2>
+            <% form_for @user, :html => {:multipart => true} do |f| %>
+
+            <%end%>
+
           <img src="img/DJ_profiel.png"/>
           <img src="img/DJ_profiel.png"/>
           <img src="img/DJ_profiel.png"/>
