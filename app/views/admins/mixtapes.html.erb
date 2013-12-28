@@ -1,0 +1,87 @@
+<% content_for :title do %>
+    Administratie - Beatfuel.be
+<% end %>
+<% content_for :header do %>
+    <h1><i class="fa fa-lock"></i><br />Administratie</h1>
+    <%= render("admins/nav") %>
+<% end %>
+
+<!-- Intro -->
+<div id="about" class="intro">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3 text-center">
+        <h1><i class="fa fa-users"></i><br />Overzicht mixtapes</h1>
+        <hr/>
+      </div>
+
+
+      <div id="search" class="search">
+        <div class="container">
+          <div class="row">
+
+            <% @users.each do |user| %>
+                <div class="col-md-4">
+                  <div class="search-item">
+                    <a href="sounds/Avicii - Wake Me Up (Official Video).mp3" class="sm2_button">
+                      <%= image_tag("http://graph.facebook.com/#{user.uid}/picture?type=normal") %>
+                    </a>
+                    <ul>
+
+                        <i class="search-icon fa fa-user"></i> <%= link_to user.name, user %>
+                        <% user.mixtapes.each do |mix| %>
+                          <li><a href="#" data-src="/mixtapes/<%= user.uid %>/<%= mix.src %>"><%= mix.title %></a></li>
+                          <i class="search-icon fa fa-trash-o"></i><%= link_to 'Destroy', admin_path(user.mixtapes.id), :confirm => 'Are you sure you want to delete this mixtape?', :method => :delete %>
+                      <% end %>
+
+                      <li>
+                        <i class="search-icon fa fa-thumbs-up"></i>
+                        <% if !user.recommendations.blank? %>
+                            <%= user.recommendations.first.amount %>
+                        <%else%>
+                            0
+                        <%end%> Recommendaties
+                      </li>
+                      <li>
+                        <i class="search-icon fa fa-location-arrow"></i>  <%= user.location %>
+                      </li>
+
+                    </ul>
+                  </div>
+                </div>
+            <% end %>
+
+          </div>
+          <section class="vert-text-littlemargin">
+            <a class="btn btn-blue" href="#register">Toon de 20 andere</a>
+          </section>
+        </div>
+      </div>
+
+
+
+
+      <div class="col-lg-6 col-md-6">
+        <h3>
+          <i class="fa fa-music"></i>
+          Upload uw Beatfuel Mixtapes
+        </h3>
+        <p>
+          Beatfuel laat toe om uw eigen mixtapes up te loaden zodat deze beschikbaar worden voor het grote publiek. Op deze manier kunnen anderen uw mixtapes beoordelen en bereikt u een groter publiek.
+        </p>
+      </div>
+
+
+      <div class="col-lg-6 col-md-6">
+        <h3>
+          <i class="fa fa-comments"></i>
+          Beoordeel mixtapes van anderen
+        </h3>
+        <p>
+          Bespreek welke delen je goed vind uit een bepaalde mixtape van 1 van uw collega's. Vind u zijn mixtape een nieuwe wereldhit? Twijfel dan niet om hem een stem te geven zodat hij bovenaan de ranglijsten prijkt!
+        </p>
+      </div>
+
+    </div>
+  </div>
+</div>

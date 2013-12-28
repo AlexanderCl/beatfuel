@@ -13,6 +13,7 @@ Beatfuel::Application.routes.draw do
 
   get "admins/index"
   get "admins/settings"
+  get "admins/mixtapes"
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

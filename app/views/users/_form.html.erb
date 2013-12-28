@@ -43,22 +43,7 @@
         <% end %>
       </div>
     <!--Controle of het veld al bestaat -->
-    <div class="paperclipExistingFiles">
-     <%= f.fields_for :assets do |asset| %>
-          <% unless asset.object.new_record? %>
-      <div class="thumbnail">
-        <%= link_to(image_tag(asset.object.image.url(:thumb), asset.object.image.url(:original)))%>
-      </div>
-      <%end%>
-    <%end%>
-    </div>
 
-    <!--Dit is een simpel veld ook voor afbeelding toe te voegen! -->
-    <div class="test">
-      <p>
-        <%= f.file_field :image%>
-      </p>
-    </div>
 
   <div class="actions">
     <%= f.submit %>

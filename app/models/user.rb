@@ -1,10 +1,10 @@
 class User < ActiveRecord::Base
-  has_many :mixtapes
-  has_many :recommendations
+  has_many :mixtapes, dependent: :destroy
+  has_many :recommendations, dependent: :destroy
   has_one :user_information
   has_many :assets
   accepts_nested_attributes_for :user_information
-  accepts_nested_attributes_for :assets
+  accepts_nested_attributes_for :assets, :allow_destroy => true
 
   def self.from_omniauth(auth)
     where(auth.slice(:provider, :uid)).first_or_initialize.tap do |user|

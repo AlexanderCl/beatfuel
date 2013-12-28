@@ -18,13 +18,14 @@ class UsersController < ApplicationController
     @user.user_information.build
     @user.assets.build
     #5 keer het veld zien om afbeelding toe te voegen doe je zo
-    #5.times {@user.assets.build}
+    5.times {@user.assets.build}
   end
 
   # GET /users/1/edit
   def edit
    #5 keer het veld zien om afbeelding toe te voegen doe je zo
-   # 5.times {@user.assets.build}
+   @user.assets.build
+   5.times {@user.assets.build}
   end
 
   # POST /users
@@ -55,6 +56,7 @@ class UsersController < ApplicationController
   # DELETE /users/1.json
   def destroy
     @user.destroy
+
     respond_to do |format|
       format.html { redirect_to users_url }
       format.json { head :no_content }
