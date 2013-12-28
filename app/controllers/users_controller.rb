@@ -16,6 +16,7 @@ class UsersController < ApplicationController
   def new
     @user = User.new
     @user.user_information.build
+    @user.assets.build
     #5 keer het veld zien om afbeelding toe te voegen doe je zo
     #5.times {@user.assets.build}
   end
@@ -68,8 +69,8 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      nested_keys = params.require(:user).fetch(:user_information_attributes, {}).keys
-      params.require(:user).permit(:name,:user_information_attributes => nested_keys)
-      #normaal moet hier ook de param :image meegegeven worden maar dan krijg ik foutmelding!!!
+      nested_keys_info = params.require(:user).fetch(:user_information_attributes, {}).keys
+      nested_keys_assets = params.require(:user).fetch(:assets_attributes, {}).keys
+      params.require(:user).permit(:name,:user_information_attributes => nested_keys_info,:assets_attributes => nested_keys_assets)
     end
 end

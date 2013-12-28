@@ -1,6 +1,7 @@
 Beatfuel::Application.routes.draw do
   resources :users
   resources :upload
+
   resources :recommendations
 
   get "pages/home"
@@ -10,6 +11,8 @@ Beatfuel::Application.routes.draw do
   get 'auth/failure' => redirect('/')
   get 'signout' => 'sessions#destroy', as: 'signout'
 
+  get "admins/index"
+  get "admins/settings"
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

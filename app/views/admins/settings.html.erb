@@ -1,0 +1,38 @@
+<% content_for :title do %>
+    Administratie - Beatfuel.be
+<% end %>
+<% content_for :header do %>
+    <h1><i class="fa fa-lock"></i><br />Administratie</h1>
+    <%= render("admins/nav") %>
+<% end %>
+
+<!-- Intro -->
+<div id="about" class="intro">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3 text-center">
+        <h1><i class="fa fa-cog"></i><br />Instellingen</h1>
+
+        <hr/>
+      </div>
+      <div class="col-lg-12 col-md-12">
+        <%= form_tag upload_index_path, :multipart => true do %>
+            <h3>
+              <i class="fa fa-facebook"></i>
+              Facebook
+            </h3>
+            <h3>
+              <i class="fa fa-twitter"></i>
+              Twitter
+            </h3>
+            <h3>
+              <i class="fa fa-linkedin"></i>
+              LinkedIn
+            </h3>
+            <%= submit_tag "Updaten" %>
+        <% end %>
+      </div>
+
+    </div>
+  </div>
+</div>
