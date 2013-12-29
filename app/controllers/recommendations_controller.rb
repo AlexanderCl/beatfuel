@@ -1,10 +1,11 @@
 class RecommendationsController < ApplicationController
-  def create
-    @recommendation = Recommendation.find_by_user_id!(params[:user_id])
-    @recommendation.increment!(:amount)
 
-      redirect_to user_path(params[:user_id])
+  def create
+    @recommendation = Recommendation.find_by_user_id_and_profile_id!(current_user.id,params[:profile_id])
+    redirect_to user_path(params[:profile_id])
   rescue ActiveRecord::RecordNotFound
-    Recommendation.create(user_id: params[:user_id], amount: 1)
-    end
+    Recommendation.create(profile_id: params[:profile_id], user_id: current_user.id, amount: 1)
+    redirect_to user_path(params[:profile_id])
+  end
+
 end

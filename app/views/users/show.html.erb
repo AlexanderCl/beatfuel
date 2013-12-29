@@ -32,16 +32,11 @@
 
         <div class="col-md-2">
           <ul>
-            <li>
-              <a class="btn btn-blue-dark" href="#"> <i class="fa fa-facebook"></i> Like op Facebook</a>
-            </li>
-            <li>
-              <a class="btn btn-blue" href="#"> <i class="fa fa-twitter"></i> Volg via Twitter</a>
-            </li>
-            <% if current_user %>
+
+            <% if current_user && !has_recommended(@user.id)  %>
             <li>
               <%= form_tag recommendations_path, :id => 'recommend' do %>
-                  <%= hidden_field_tag 'user_id', @user.id %>
+                  <%= hidden_field_tag 'profile_id', @user.id %>
                   <%= link_to '<i class="fa fa-heart"></i> Aanraden'.html_safe, "#", :onclick => "$('#recommend').submit()", :class => "btn btn-yellow" %>
               <% end %>
             </li>

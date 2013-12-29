@@ -13,6 +13,18 @@ class ApplicationController < ActionController::Base
     current_user && current_user.is_admin
   end
 
+  def has_recommended(profile_id)
+    if current_user
+      @recommendation = Recommendation.find_by_user_id_and_profile_id!(current_user.id,profile_id)
+      true
+    end
+
+  rescue ActiveRecord::RecordNotFound
+    false
+  end
+
+  helper_method :has_recommended
+
   helper_method :current_user
   helper_method :current_admin
 end

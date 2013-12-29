@@ -23,9 +23,7 @@
               <% @users.each do |user| %>
                   <div class="col-md-4">
                     <div class="search-item">
-                      <a href="sounds/Avicii - Wake Me Up (Official Video).mp3" class="sm2_button">
                         <%= image_tag("http://graph.facebook.com/#{user.uid}/picture?type=normal") %>
-                      </a>
                       <ul>
                         <li>
                           <i class="search-icon fa fa-user"></i> <%= link_to user.name, user %>
@@ -59,30 +57,6 @@
             </section>
           </div>
         </div>
-
-
-
-
-      <div class="col-lg-6 col-md-6">
-        <h3>
-          <i class="fa fa-music"></i>
-          Upload uw Beatfuel Mixtapes
-        </h3>
-        <p>
-          Beatfuel laat toe om uw eigen mixtapes up te loaden zodat deze beschikbaar worden voor het grote publiek. Op deze manier kunnen anderen uw mixtapes beoordelen en bereikt u een groter publiek.
-        </p>
-      </div>
-
-
-      <div class="col-lg-6 col-md-6">
-        <h3>
-          <i class="fa fa-comments"></i>
-          Beoordeel mixtapes van anderen
-        </h3>
-        <p>
-          Bespreek welke delen je goed vind uit een bepaalde mixtape van 1 van uw collega's. Vind u zijn mixtape een nieuwe wereldhit? Twijfel dan niet om hem een stem te geven zodat hij bovenaan de ranglijsten prijkt!
-        </p>
-      </div>
 
     </div>
   </div>

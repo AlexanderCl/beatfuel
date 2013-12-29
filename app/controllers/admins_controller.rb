@@ -1,31 +1,30 @@
 class AdminsController < ApplicationController
 
   def index
+    if !current_admin
+      redirect_to root_path
+    end
     @users = User.all
-    if !current_admin
-      redirect_to root_path
-    end
-  end
-
-  def settings
-    if !current_admin
-      redirect_to root_path
-    end
   end
 
   def mixtapes
-    @users = User.all
     if !current_admin
       redirect_to root_path
     end
+    @users = User.all
+    respond_to do |format|
+      format.html { render 'admins/mixtapes' }
+      format.json { head :no_content }
+    end
   end
 
-  def deleteTape(mixtape)
-    @mixtape = Mixtape.find_by(mixtape)
+  def destroy
+    @mixtape = Mixtape.find_by_id(params[:id])
     @mixtape.destroy
 
-    if !current_admin
-      redirect_to root_path
+    respond_to do |format|
+      format.html { redirect_to mixtapes_admins_path }
+      format.json { head :no_content }
     end
   end
 

@@ -2,15 +2,16 @@
     Overzicht artiesten - Beatfuel.be
 <% end %>
 <% content_for :header do %>
+    <%= javascript_include_tag 'countries' %>
     <h1>Er werden <%= @users.count %> DJ's bij u in de buurt gevonden</h1>
     <h2>Verfijn uw zoekactie op basis van locatie</h2>
 
     <div class="collapse navbar-collapse navbar-ex1-collapse">
       <ul class="nav-pills nav navbar pull-left">
-        <li>
+        <li class="active">
           <a href="#">Overal</a>
         </li>
-        <li class="active">
+        <li>
           <a href="#">Regio</a>
         </li>
         <li>
@@ -19,7 +20,7 @@
       </ul>
     </div>
 
-    <select onchange="print_state('state',this.selectedIndex);" id="country" name = "country"></select> <br />
+    <select onchange="print_state('state',this.selectedIndex);" id="country" name ="country"></select> <br />
     Regio:
     <select name ="state" id = "state"></select>
     <script type="text/javascript">print_country("country");</script>
@@ -31,9 +32,7 @@
       <% @users.each do |user| %>
       <div class="col-md-4">
         <div class="search-item">
-          <a href="sounds/Avicii - Wake Me Up (Official Video).mp3" class="sm2_button">
             <%= image_tag("http://graph.facebook.com/#{user.uid}/picture?type=normal") %>
-          </a>
           <ul>
             <li>
               <i class="search-icon fa fa-user"></i> <%= link_to user.name, user %>
@@ -63,4 +62,3 @@
     </section>
   </div>
 </div>
-<%= javascript_include_tag 'countries' %>
