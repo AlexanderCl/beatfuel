@@ -1,12 +1,20 @@
 class User < ActiveRecord::Base
   has_many :mixtapes, dependent: :destroy
   has_many :recommendations, dependent: :destroy
-  has_one :user_information
+  has_one :user_information, dependent: :destroy
   has_many :assets
+
   accepts_nested_attributes_for :user_information
   accepts_nested_attributes_for :assets, :allow_destroy => true
 
   def self.from_omniauth(auth)
+    # Wat er moet gebeuren voor zoeken:
+    # De gebruiker zijn longitude en latitude moet opgeslaan worden in user tabel
+    # Hiervoor moet er dus migration AddLongLatToUser gedaan worden waarbij er longitude en latidude als decimals toegevoegd worden
+    # Daarna zal long en lat moeten opgevraagd worden bij google maps api aangezien FB enkel city doorgeeft:
+    # Dit kan als volgt: http://maps.googleapis.com/maps/api/geocode/json?address=Blankenberge&sensor=false&region=be
+    # Het ophalen van gegevens bij google maps api doe je best in controller, dus je zal in session_controller na from_omniauth dit moeten doen
+
     where(auth.slice(:provider, :uid)).first_or_initialize.tap do |user|
       user.provider = auth.provider
       user.uid = auth.uid

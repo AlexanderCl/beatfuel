@@ -15,7 +15,10 @@ class Mixtape < ActiveRecord::Base
     # write the filed
     File.open(path, "wb") { |f| f.write(file['datafile'].read) }
 
+    sanitize_name = File.basename(name, ".*").humanize
+
     # create db entry
-    user.mixtapes.create(title:name,src:name)
+    user.mixtapes.create(title:sanitize_name,src:name)
   end
+
 end

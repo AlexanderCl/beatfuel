@@ -49,7 +49,10 @@
               Geen mixtapes beschikbaar
           <% end %>
           <%= form_tag upload_index_path, :multipart => true do %>
-              <%= file_field 'mp3file', 'datafile' %>
+              <%= file_field 'mp3file', 'datafile',
+                             :data => {
+                                     :max_file_size => 5.megabytes
+                             } %>
 
               <%= submit_tag "Nummer toevoegen" %>
           <% end %>
