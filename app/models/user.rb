@@ -1,9 +1,9 @@
 class User < ActiveRecord::Base
   has_many :mixtapes, dependent: :destroy
+  has_many :user_images, dependent: :destroy
   has_many :recommendations, dependent: :destroy
   has_one :user_information, dependent: :destroy
   has_many :assets
-
   accepts_nested_attributes_for :user_information
   accepts_nested_attributes_for :assets, :allow_destroy => true
 
@@ -15,7 +15,12 @@ class User < ActiveRecord::Base
     # Dit kan als volgt: http://maps.googleapis.com/maps/api/geocode/json?address=Blankenberge&sensor=false&region=be
     # Het ophalen van gegevens bij google maps api doe je best in controller, dus je zal in session_controller na from_omniauth dit moeten doen
 
+
     where(auth.slice(:provider, :uid)).first_or_initialize.tap do |user|
+     # response = HTTParty.get("http://maps.googleapis.com/maps/api/geocode/json?address=#{auth.info.location}&sensor=false&region=be")
+     # lat = response.parsed_response["results"].first["geometry"]["location"]["lat"]
+     # lng = response.parsed_response["results"].first["geometry"]["location"]["lng"]
+
       user.provider = auth.provider
       user.uid = auth.uid
       user.name = auth.info.name
@@ -23,6 +28,8 @@ class User < ActiveRecord::Base
       user.location = auth.info.location
       user.oauth_token = auth.credentials.token
       user.oauth_expires_at = Time.at(auth.credentials.expires_at)
+     # user.latitude = lat
+     # user.longitude = lng
 
       user.save!
       if user.user_information.blank?

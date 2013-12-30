@@ -1,0 +1,2 @@
+module AdminsimgHelper
+end

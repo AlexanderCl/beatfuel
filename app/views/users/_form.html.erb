@@ -30,18 +30,11 @@
 
       </div>
 
-    <!--Dit zijn normaal de 5 velden die gegenereerd worden om afbeelding toe te voegen -->
+    <!--images -->
 
-    <div class="paperclipStuff">
-        <h2>Afbeeldingen</h2>
-        <%= f.fields_for :assets do |asset| %>
-            <% if asset.object.new_record? %>
-                <div class="field">
-                  <%= asset.file_field :image %><br />
-                </div>
-            <%end%>
-        <% end %>
-      </div>
+
+
+
     <!--Controle of het veld al bestaat -->
 
 
@@ -52,4 +45,13 @@
 
 
 <%end%>
+
+<%= form_tag uploadimage_index_path, :multipart => true do %>
+    <%= file_field 'imgfile', 'datafile',
+                   :data => {
+                           :max_file_size => 5.megabytes
+                   } %>
+
+    <%= submit_tag "Afbeelding toevoegen" %>
+<% end %>
 

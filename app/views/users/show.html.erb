@@ -59,6 +59,19 @@
           <h2>Afbeeldingen</h2>
 
 
+          <% if !@user.user_images.blank? %>
+          <% @user.user_images.each do |img| %>
+
+              <img src="/images/<%= @user.uid %>/<%= img.image_url %>"></img>
+
+          <% end %>
+
+          <% else %>
+              Geen afbeeldingen beschikbaar
+          <% end %>
+
+
+
           <div class="clear"></div>
         </div>
         <div class="col-md-5 col-md-offset-1">

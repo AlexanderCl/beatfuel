@@ -1,0 +1,57 @@
+<% content_for :title do %>
+    Administratie - Beatfuel.be
+<% end %>
+<% content_for :header do %>
+    <h1><i class="fa fa-lock"></i><br />Administratie</h1>
+    <%= render("admins/nav") %>
+<% end %>
+
+<!-- Intro -->
+<div id="about" class="intro">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3 text-center">
+        <h1><i class="fa fa-camera"></i><br />Overzicht afbeeldingen</h1>
+        <hr/>
+      </div>
+
+
+      <div id="search" class="search">
+        <div class="container">
+          <div class="row">
+
+
+            <% @users.each do |user| %>
+                <% if !user.user_images.blank? %>
+                    <div class="col-md-4">
+                      <div class="search-item">
+                        <%= image_tag("http://graph.facebook.com/#{user.uid}/picture?type=normal") %>
+                        <ul>
+                          <li><i class="search-icon fa fa-user"></i> <%= link_to user.name, user %></li>
+                          <li><i class="search-icon fa fa-camera"></i> Images:</li>
+                          <% user.user_images.each do |img| %>
+                          <li>
+                          <img class="img-responsive" src="/images/<%= user.uid %>/<%= img.image_url %>"><%= link_to '<i class="fa fa-trash-o"></i>'.html_safe, adminsimg_path(img.id), :confirm => 'Are you sure you want to delete this image', :method => :delete %></img>
+                          <div class="clearfix"></div>
+                          </li>
+                          <% end %>
+                        </ul>
+                      </div>
+                    </div>
+                <% else %>
+                    Geen afbeeldingen beschikbaar
+                <% end %>
+
+            <% end %>
+
+
+          </div>
+          <section class="vert-text-littlemargin">
+            <a class="btn btn-blue" href="#register">Toon de 20 andere</a>
+          </section>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

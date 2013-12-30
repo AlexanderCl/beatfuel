@@ -8,6 +8,9 @@ class SessionsController < ApplicationController
   rescue ActiveRecord::RecordNotFound
     user = User.from_omniauth(request.env["omniauth.auth"])
     session[:user_id] = user.id
+    # Parse JSON
+    #event_data = JSON.parse(WEBADRES)
+    #longitude = event_data["data"]["object"]["id"]
     redirect_to root_url
   end
 

@@ -1,12 +1,16 @@
 Beatfuel::Application.routes.draw do
   resources :users
   resources :upload
+  resources :uploadimage
   resources :admins do
     collection do
       get 'mixtapes'
+      get 'images'
     end
 
   end
+
+  resources :adminsimg
 
   resources :recommendations
 
@@ -16,6 +20,8 @@ Beatfuel::Application.routes.draw do
   get 'auth/:provider/callback' => 'sessions#create'
   get 'auth/failure' => redirect('/')
   get 'signout' => 'sessions#destroy', as: 'signout'
+
+
 
   #get "admins/index"
   #get "admins/mixtapes"

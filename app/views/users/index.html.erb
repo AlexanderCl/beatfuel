@@ -8,14 +8,11 @@
 
     <div class="collapse navbar-collapse navbar-ex1-collapse">
       <ul class="nav-pills nav navbar pull-left">
-        <li class="active">
+        <li>
           <a href="#">Overal</a>
         </li>
-        <li>
+        <li class="active">
           <a href="#">Regio</a>
-        </li>
-        <li>
-          <a href="#">In de buurt</a>
         </li>
       </ul>
     </div>
@@ -24,12 +21,15 @@
     Regio:
     <select name ="state" id = "state"></select>
     <script type="text/javascript">print_country("country");</script>
+
+
 <% end %>
 <div id="search" class="search">
   <div class="container">
     <div class="row">
 
       <% @users.each do |user| %>
+
       <div class="col-md-4">
         <div class="search-item">
             <%= image_tag("http://graph.facebook.com/#{user.uid}/picture?type=normal") %>

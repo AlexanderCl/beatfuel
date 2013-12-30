@@ -357,7 +357,7 @@ h2.author{
     margin: 5px 5px 0 0;
 }
 
-/* Full Page Image Header Area */
+/* Full Page UserImage Header Area */
 
 header {
     display: table;
@@ -422,6 +422,8 @@ header {
 
 .profile_about img{
     padding:10px 10px 0 0;
+    width:100px;
+    height:100px;
 }
 #portfolio ul{
     margin-top:10px;
