@@ -15,11 +15,9 @@
         <hr/>
       </div>
 
-
       <div id="search" class="search">
         <div class="container">
           <div class="row">
-
 
             <% @users.each do |user| %>
                 <% if !user.user_images.blank? %>
@@ -41,14 +39,8 @@
                 <% else %>
                     Geen afbeeldingen beschikbaar
                 <% end %>
-
             <% end %>
-
-
           </div>
-          <section class="vert-text-littlemargin">
-            <a class="btn btn-blue" href="#register">Toon de 20 andere</a>
-          </section>
         </div>
       </div>
 

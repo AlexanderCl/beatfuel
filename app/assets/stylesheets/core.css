@@ -260,6 +260,7 @@ h1.quote{
     text-shadow: 2px 2px 2px #515151;
     font-family: 'Lobster Two', cursive;
     display:none;
+    font-size: 32px;
 }
 
 h1.lobster{
@@ -476,6 +477,11 @@ img.border{
 .search-item {
     margin-bottom: 15px;
     float:left;
+}
+
+.search-item > ul > li > img{
+    height:100px;
+    width:100px;
 }
 
 .search-item a {
@@ -729,6 +735,7 @@ form input, form textarea {
     -webkit-transition: padding .25s;
     -o-transition: padding .25s;
     transition: padding .25s;
+    width:100%;
 }
 form input:focus, form textarea:focus {
     background: #fff;

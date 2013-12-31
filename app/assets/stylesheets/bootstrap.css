@@ -173,6 +173,11 @@ input[type="reset"],
 input[type="submit"] {
   cursor: pointer;
   -webkit-appearance: button;
+  margin-top:10px;
+  background-color: #D3D3D3;
+  border-color: #5A5A5A;
+  padding: 10px 16px;
+  color: #262626;
 }
 
 button[disabled],
@@ -466,7 +471,7 @@ h6 .small {
 
 h1,
 .h1 {
-  font-size: 36px;
+  font-size: 58px;
 }
 
 h2,

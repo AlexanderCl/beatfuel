@@ -1,5 +1,8 @@
 class UserImage < ActiveRecord::Base
+
   belongs_to :user
+
+  validates :image_url, :presence => true, :on => :update
 
   def self.uploadimage(file, user)
 

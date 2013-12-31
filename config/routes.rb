@@ -12,6 +12,8 @@ Beatfuel::Application.routes.draw do
 
   resources :adminsimg
 
+  resources :userimg
+
   resources :recommendations
 
   get "pages/home"
