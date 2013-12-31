@@ -1,1 +1,0 @@
-http://maps.googleapis.com/maps/api/geocode/json?address=Blankenberge&sensor=false&region=be
