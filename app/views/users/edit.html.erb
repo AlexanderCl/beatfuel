@@ -31,7 +31,7 @@
             <% end %>
           </ol>
           <% else %>
-              Geen mixtapes beschikbaar
+              Nog geen mixtapes beschikbaar
           <% end %>
           <%= form_tag upload_index_path, :multipart => true do %>
               <%= file_field 'mp3file', 'datafile',
@@ -49,7 +49,7 @@
               <% end %>
 
           <% else %>
-              Geen afbeeldingen beschikbaar
+              Nog geen afbeeldingen beschikbaar
           <% end %>
           <h2>Afbeeldingen toevoegen</h2>
           <%= form_tag uploadimage_index_path, :multipart => true do %>

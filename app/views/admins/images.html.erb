@@ -21,14 +21,14 @@
 
             <% @users.each do |user| %>
                 <% if !user.user_images.blank? %>
-                    <div class="col-md-4">
+                    <div class="col-md-12">
                       <div class="search-item">
                         <%= image_tag("http://graph.facebook.com/#{user.uid}/picture?type=normal") %>
                         <ul>
                           <li><i class="search-icon fa fa-user"></i> <%= link_to user.name, user %></li>
                           <li><i class="search-icon fa fa-camera"></i> Images:</li>
                           <% user.user_images.each do |img| %>
-                          <li>
+                          <li class="pull-left">
                           <img class="img-responsive" src="/images/<%= user.uid %>/<%= img.image_url %>"><%= link_to '<i class="fa fa-trash-o"></i>'.html_safe, adminsimg_path(img.id), :confirm => 'Are you sure you want to delete this image', :method => :delete %></img>
                           <div class="clearfix"></div>
                           </li>

@@ -5,48 +5,43 @@
     <%= @user.name %> - Beatfuel.be
 <% end %>
 <% content_for :header do %>
-    <section class="profile">
 
-      <!-- Eerste element van de portfolio-->
-      <div id="slidingDiv" class="toggleDiv">
-        <div class="col-md-4">
-          <%= image_tag("http://graph.facebook.com/#{@user.uid}/picture?type=large", :class => "img-responsive border") %>
+    <div class="container">
+          <section class="profile">
+              <div class="col-md-4">
+                <%= image_tag("http://graph.facebook.com/#{@user.uid}/picture?type=large", :class => "img-responsive border") %>
+              </div>
+              <div class="col-md-6">
+                <h1><%= @user.name %></h1>
+                <h2><%= @user.user_information.slogan %></h2>
+                <ul class="left">
+                  <li><i class="fa fa-compass"></i> <%= @user.location %></li>
+                  <li><i class="fa fa-tags"></i> <%= @user.user_information.music_genre %></li>
+                  <li><i class="fa fa-thumbs-up"></i>
+                    <% if !@user.recommendations.blank? %>
+                        <%= @user.recommendations.first.amount %>
+                    <%else%>
+                        0
+                    <%end%> Recommendaties
+                  </li>
+                </ul>
+              </div>
+              <div class="col-md-2">
+                <ul>
+                  <% if current_user && !has_recommended(@user.id)  %>
+                      <li>
+                        <%= form_tag recommendations_path, :id => 'recommend' do %>
+                            <%= hidden_field_tag 'profile_id', @user.id %>
+                            <%= link_to '<i class="fa fa-heart"></i> Aanraden'.html_safe, "#", :onclick => "$('#recommend').submit()", :class => "btn btn-yellow" %>
+                        <% end %>
+                      </li>
+                  <% end %>
+                </ul>
+              </div>
+              <div class="clearfix"></div>
+          </section>
         </div>
 
-        <div class="col-md-6">
-          <h1><%= @user.name %></h1>
-          <h2><%= @user.user_information.slogan %></h2>
-          <ul class="left">
-            <li><i class="fa fa-compass"></i> <%= @user.location %></li>
-            <li><i class="fa fa-tags"></i> <%= @user.user_information.music_genre %></li>
-            <li><i class="fa fa-thumbs-up"></i>
-              <% if !@user.recommendations.blank? %>
-                  <%= @user.recommendations.first.amount %>
-              <%else%>
-                  0
-              <%end%> Recommendaties
-             </li>
-
-          </ul>
-        </div>
-
-        <div class="col-md-2">
-          <ul>
-
-            <% if current_user && !has_recommended(@user.id)  %>
-            <li>
-              <%= form_tag recommendations_path, :id => 'recommend' do %>
-                  <%= hidden_field_tag 'profile_id', @user.id %>
-                  <%= link_to '<i class="fa fa-heart"></i> Aanraden'.html_safe, "#", :onclick => "$('#recommend').submit()", :class => "btn btn-yellow" %>
-              <% end %>
-            </li>
-            <% end %>
-          </ul>
-        </div>
-        <div class="clearfix"></div>
-      </div>
-
-    </section>
 <% end %>
 <div id="profile_about" class="profile_about">
   <div class="container">
@@ -57,27 +52,17 @@
           <h1>Over <%= @user.name %></h1>
           <p><%= @user.user_information.about %></p>
           <h2>Afbeeldingen</h2>
-
-
           <% if !@user.user_images.blank? %>
           <% @user.user_images.each do |img| %>
-
               <img src="/images/<%= @user.uid %>/<%= img.image_url %>"></img>
-
           <% end %>
-
           <% else %>
               Geen afbeeldingen beschikbaar
           <% end %>
-
-
-
           <div class="clear"></div>
         </div>
         <div class="col-md-5 col-md-offset-1">
           <h1>Mixtapes</h1>
-
-
           <% if !@user.mixtapes.blank? %>
           <div id="audiojs_wrapper0" classname="audiojs" class="audiojs  ">
             <audio src="/mixtapes/<%= @user.uid %>/<%= @user.mixtapes.first.src %>" preload=""></audio>
@@ -93,11 +78,8 @@
           <% else %>
                 Geen mixtapes beschikbaar
           <% end %>
-
         </div>
-
       </div>
-
     </div>
   </div>
 </div>

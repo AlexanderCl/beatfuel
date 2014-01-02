@@ -426,32 +426,10 @@ header {
     width:100px;
     height:100px;
 }
-#portfolio ul{
-    margin-top:10px;
-}
-#portfolio a{
-    color:#666;
-    font-weight:600;
-}
-
-#portfolio a:hover{
-    color:#46ABF0;
-    font-weight:600;
-    text-decoration:none;
-}
-
-#portfolio li{
-    list-style-image:url("list_img.png")
-
-}
 
 img.border{
     border: 5px solid #FFFFFF;
     box-shadow: 0 0 8px #CCCCCC;
-}
-
-.workinfo img{
-
 }
 
 .profilepage{
@@ -459,19 +437,12 @@ img.border{
     background-image:url("header_bg.png");
     background-size:cover;
 }
-/* Map */
-
-.map {
-    height: 300px;
-}
-
-/* Stats - services */
+/* search */
 .search {
     background-image:url("bg-stripe.jpg");
     background-repeat:repeat;
     padding: 50px 0;
     color: #333333;
-    border-bottom:thick solid #CCCCCC;
 }
 
 .search-item {
@@ -482,6 +453,8 @@ img.border{
 .search-item > ul > li > img{
     height:100px;
     width:100px;
+    float:left;
+    display:inline;
 }
 
 .search-item a {
@@ -498,10 +471,11 @@ img.border{
     list-style:none;
     margin-left:-20px;
     margin-top:4px;
-
 }
 .search-item li{
     padding-bottom:6px;
+    display:block;
+    position: relative;
 }
 
 .stats {

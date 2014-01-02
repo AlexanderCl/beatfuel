@@ -11,4 +11,8 @@ module PagesHelper
   def current_recommendations
     Recommendation.all.count
   end
+
+  def current_images
+    UserImage.all.count
+  end
 end

@@ -2,27 +2,20 @@
     Overzicht artiesten - Beatfuel.be
 <% end %>
 <% content_for :header do %>
-    <%= javascript_include_tag 'countries' %>
-    <h1>Er werden <%= @users.count %> DJ's bij u in de buurt gevonden</h1>
+    <h1>Er werden <%= @users.count %> DJ's gevonden</h1>
     <h2>Verfijn uw zoekactie op basis van locatie</h2>
-
-    <div class="collapse navbar-collapse navbar-ex1-collapse">
-      <ul class="nav-pills nav navbar pull-left">
-        <li>
-          <a href="#">Overal</a>
-        </li>
-        <li class="active">
-          <a href="#">Regio</a>
-        </li>
-      </ul>
+    <div class="container">
+      <div class="collapse navbar-collapse navbar-ex1-collapse">
+        <ul class="nav-pills nav navbar pull-left">
+          <li class="active">
+            <a href="#">Overal</a>
+          </li>
+          <li>
+            <a href="#">Regio</a>
+          </li>
+        </ul>
+      </div>
     </div>
-
-    <select onchange="print_state('state',this.selectedIndex);" id="country" name ="country"></select> <br />
-    Regio:
-    <select name ="state" id = "state"></select>
-    <script type="text/javascript">print_country("country");</script>
-
-
 <% end %>
 <div id="search" class="search">
   <div class="container">
@@ -55,10 +48,6 @@
         </div>
       </div>
       <% end %>
-
     </div>
-    <section class="vert-text-littlemargin">
-      <a class="btn btn-blue" href="#register">Toon de 20 andere</a>
-    </section>
   </div>
 </div>
