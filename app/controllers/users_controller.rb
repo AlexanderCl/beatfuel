@@ -10,12 +10,14 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
+
   end
 
   # GET /users/new
   def new
     @user = User.new
     @user.user_information.build
+
   end
 
   # GET /users/1/edit
@@ -45,15 +47,16 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @user.update_attributes(user_params) ?
         redirect_to(user_path(@user)) : render(action: 'edit')
+    flash[:notice] = 'Gebruiker succesvol aangepast!'
   end
 
   # DELETE /users/1
   # DELETE /users/1.json
   def destroy
     @user.destroy
-
     respond_to do |format|
       format.html { redirect_to users_url }
+      flash[:notice] = 'Gebruiker verwijderd!'
       format.json { head :no_content }
     end
   end

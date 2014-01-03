@@ -14,6 +14,7 @@ class AdminsimgController < ApplicationController
 
     respond_to do |format|
       format.html { redirect_to images_admins_path }
+      flash[:notice] = 'Afbeelding verwijderd!'
       format.json { head :no_content }
     end
   end

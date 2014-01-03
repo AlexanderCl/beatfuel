@@ -35,6 +35,7 @@ class AdminsController < ApplicationController
 
     respond_to do |format|
       format.html { redirect_to mixtapes_admins_path }
+      flash[:notice] = 'Mixtape verwijderd!'
       format.json { head :no_content }
     end
   end

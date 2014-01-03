@@ -64,7 +64,7 @@ body {
 .profile {
     text-align:left;
     color:#FFF;
-    margin-top:200px;
+    margin-top:50px;
 }
 
 #profile_info{
@@ -460,6 +460,7 @@ img.border{
 .search-item a {
     color:#46ABF0;
     font-weight:800;
+
 }
 
 .search-item img {
@@ -863,5 +864,4 @@ img.smallprofile{
     padding-left:30px;
     padding-right:10px;
 }
-
 

@@ -1,7 +1,7 @@
 <%= form_for @user, :html => {:multipart => true} do |f| %>
   <% if @user.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+      <h2><%= pluralize(@user.errors.count, "error") %> User cannot be saved because:</h2>
 
       <ul>
       <% @user.errors.full_messages.each do |msg| %>
@@ -15,12 +15,16 @@
       <h1>Over jezelf</h1>
       <%= f.label :name %><br>
       <%= f.text_field :name %>
+
       <%= f.fields_for :user_information do |u| %>
           <div class="field">
             <%= u.label :slogan %><br />
             <%= u.text_field :slogan %><br />
+
+
             <%= u.label :about %><br />
             <%= u.text_area :about, rows: 15 %><br />
+
             <%= u.label :music_genre %><br />
             <%= u.text_field :music_genre %>
           </div>

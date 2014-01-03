@@ -14,6 +14,7 @@ class UserimgController < ApplicationController
 
     respond_to do |format|
       format.html { redirect_to user_path(current_user) }
+      flash[:notice] = 'Afbeelding verwijderd!'
       format.json { head :no_content }
     end
   end

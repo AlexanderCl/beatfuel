@@ -1,11 +1,11 @@
 <%= stylesheet_link_tag 'audio_playlist', 'application', media: 'all' %>
 <%= javascript_include_tag "audio.min", "data-turbolinks-track" => true %>
 <%= javascript_include_tag "playlist", "data-turbolinks-track" => true %>
+
 <% content_for :title do %>
     <%= @user.name %> - Beatfuel.be
 <% end %>
 <% content_for :header do %>
-
     <div class="container">
           <section class="profile">
               <div class="col-md-4">
@@ -36,6 +36,7 @@
                         <% end %>
                       </li>
                   <% end %>
+
                 </ul>
               </div>
               <div class="clearfix"></div>
@@ -47,18 +48,32 @@
   <div class="container">
     <div class="row">
       <!--Als je ze smaller tegen elkaar wil gebruik je md2 en zet je ook een col-md-offset-2 voor margin ;) -->
-      <div class="col-md-12">
+
+      <% flash.each do |name, msg| %>
+          <% if msg.is_a?(String) %>
+              <div class="alert alert-<%= name == :notice ? "success" : "danger" %>">
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                <%= content_tag :div, msg, :id => "flash_#{name}" %>
+              </div>
+          <% end %>
+      <% end %>
+
         <div class="col-md-6">
           <h1>Over <%= @user.name %></h1>
           <p><%= @user.user_information.about %></p>
           <h2>Afbeeldingen</h2>
+
           <% if !@user.user_images.blank? %>
           <% @user.user_images.each do |img| %>
+                  <a href="/images/<%= @user.uid %>/<%= img.image_url %>">
               <img src="/images/<%= @user.uid %>/<%= img.image_url %>"></img>
+                  </a>
           <% end %>
+
           <% else %>
               Geen afbeeldingen beschikbaar
           <% end %>
+
           <div class="clear"></div>
         </div>
         <div class="col-md-5 col-md-offset-1">

@@ -1,6 +1,7 @@
 <%= stylesheet_link_tag 'audio_playlist', 'application', media: 'all' %>
 <%= javascript_include_tag "audio.min", "data-turbolinks-track" => true %>
 <%= javascript_include_tag "playlist", "data-turbolinks-track" => true %>
+
 <% content_for :title do %>
     Bewerk profiel - Beatfuel.be
 <% end %>
@@ -34,6 +35,7 @@
               Nog geen mixtapes beschikbaar
           <% end %>
           <%= form_tag upload_index_path, :multipart => true do %>
+
               <%= file_field 'mp3file', 'datafile',
                              :data => {
                                      :max_file_size => 5.megabytes
@@ -45,13 +47,17 @@
           <h2>Afbeeldingen verwijderen</h2>
           <% if !@user.user_images.blank? %>
               <% @user.user_images.each do |img| %>
-                  <img src="/images/<%= @user.uid %>/<%= img.image_url %>" data-lightbox="image-1"><%= link_to '<i class="fa fa-trash-o"></i>'.html_safe, userimg_path(img.id), :confirm => 'Are you sure you want to delete this image', :method => :delete %></img>
+                  <a href="/images/<%= @user.uid %>/<%= img.image_url %>">
+                   <img src="/images/<%= @user.uid %>/<%= img.image_url %>"><%= link_to '<i class="fa fa-trash-o"></i>'.html_safe, userimg_path(img.id), :confirm => 'Are you sure you want to delete this image', :method => :delete %></img>
+                  </a>
               <% end %>
 
           <% else %>
               Nog geen afbeeldingen beschikbaar
           <% end %>
           <h2>Afbeeldingen toevoegen</h2>
+
+
           <%= form_tag uploadimage_index_path, :multipart => true do %>
               <%= file_field 'imgfile', 'datafile',
                              :data => {
@@ -60,6 +66,7 @@
 
               <%= submit_tag "Afbeelding toevoegen" %>
           <% end %>
+
 
         </div>
 

@@ -2,7 +2,9 @@ class UserImage < ActiveRecord::Base
 
   belongs_to :user
 
-  validates :image_url, :presence => true, :on => :update
+  validates :image_url,:presence => true
+
+  validates_format_of :image_url, :with => %r{\.(gif|jpg|png)\Z}i, :message => 'must be a URL for GIF, JPG or PNG image.'
 
   def self.uploadimage(file, user)
 
