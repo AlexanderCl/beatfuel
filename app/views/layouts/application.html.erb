@@ -4,7 +4,7 @@
   <title><%= content_for?(:title) ? yield(:title) : "Beatfuel" %></title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "bootstrap.js", media: 'all' %>
+  <%= javascript_include_tag "bootstrap.js", "application", media: 'all' %>
   <%= csrf_meta_tags %>
 
   <!-- Google Font -->

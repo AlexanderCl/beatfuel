@@ -17,7 +17,7 @@ class UsersController < ApplicationController
   def new
     @user = User.new
     @user.user_information.build
-
+    @user.mixtapes.build
   end
 
   # GET /users/1/edit
