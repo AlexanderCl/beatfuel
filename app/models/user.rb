@@ -3,9 +3,6 @@ class User < ActiveRecord::Base
   has_many :user_images, dependent: :destroy
   has_many :recommendations, dependent: :destroy
   has_one :user_information, dependent: :destroy
-
-
-
   accepts_nested_attributes_for :user_information
 
   def self.from_omniauth(auth)

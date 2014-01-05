@@ -1,7 +1,6 @@
 @charset "utf-8";
 /* CSS Document */
 
-/* New stylezzz */
 span.cursive {
     display: inline-block;
     font-family: 'Marck Script',cursive;
@@ -9,7 +8,6 @@ span.cursive {
     font-weight: normal;
     text-shadow: 1px 1px 2px #515151;
 }
-
 span.title_line {
     border-bottom: 2px solid #FFFFFF;
     display: inline-block;
@@ -17,22 +15,19 @@ span.title_line {
     margin: 0 15px;
     width: 25px;
 }
-
 span.small {
     font-size: 40px;
     font-weight: 600;
     text-shadow: 2px 2px 2px #515151;
 }
-
 .navbar.navbar-inverse {
     background: rgba(0, 0, 0, 0.6);
 }
-
 .nav-pills li {
     text-transform: uppercase;
 }
 
-div ul.nav-pills li a.active {
+.ul.nav-pills > li > a.active {
     background: #428bca;
     color: #fff;
 }
@@ -40,126 +35,78 @@ div ul.nav-pills li a.active {
 .nav-pills > li > a:hover {
     background: none;
 }
-
 nav .brand img { margin-top: 18px;}
-
 nav ul {
     margin-top: 20px;
 }
 /* Global Styles */
-
 
 html,
 body {
     height: 100%;
     width: 100%;
 }
-
 .vert-text {
     text-align: center;
     color:#FFF;
     margin-top:200px;
 }
-
-.profile {
-    text-align:left;
-    color:#FFF;
-    margin-top:50px;
-}
-
 #profile_info{
     height: auto;
     margin-top: 10px;
     padding-bottom: 10px;
     padding-top: 70px;
 }
-.clear{
-    clear:both;
-}
-.profile ul li {
-    font-size:16px;
-    line-height:1.8em;
+.profile {
+    text-align:left;
+    color:#FFF;
+    margin-top:50px;
 }
 .profile ul {
     list-style-type:none;
     text-align:center;
     padding-left:0;
-}
-
-.profile ul {
-    list-style-type:none;
-    padding-left:0;
     text-align:left;
 }
-
+.profile > ul > li {
+    font-size:16px;
+    line-height:1.8em;
+}
+.clear{
+    clear:both;
+}
 .vert-text p{
     text-align: center;
     margin-top:60px;
     color:#CCC;
 }
-
 .vert-text-left {
     float:left;
     color:#FFF;
     margin-top:150px;
     padding-left:25px;
 }
-
 .vert-text-littlemargin {
     text-align: center;
     color:#FFF;
     margin-top:25px;
 }
-
-.header h1 {
-    color: #FFFFFF;
-    font-size:48px;
-    font-weight: 600;
-    line-height:1em;
-    text-shadow: 2px 2px 2px #515151;
-    margin:0;
-}
-
-.header h2 {
-    margin-bottom:40px;
-    text-shadow: 2px 2px 2px #515151;
-    font-size:28px;
-}
-
-/* Small header titels*/
-.header2 h1 {
-    color: #FFFFFF;
-    font-size:48px;
-    font-weight: 600;
-    line-height:1em;
-    text-shadow: 2px 2px 2px #515151;
-    margin:0;
-}
-
-.header2 h2 {
-    margin-bottom:40px;
-    text-shadow: 2px 2px 2px #515151;
-    font-size:28px;
-}
-
-.row h1{
+.row > h1{
     font-size:42px;
     font-weight:600;
 }
-
-.row p.statsinfo{
+.row > p.statsinfo{
     font-size:24px;
     font-weight:800;
     color:#333;
 }
 
-.row h3.eyecatch{
+.row > h3.eyecatch{
     color:#1a9ff9;
 }
 
-.row h4.active{
+.row > h4.active{
     color:#000033;
-
 }
 
 /*Buttons */
@@ -169,19 +116,17 @@ body {
     color: #FFFFFF;
     margin:10px;
     padding: 10px 16px;
-    border-radius: 0;
+    border-radius:0;
+}
+.btn-normal:hover{
+    color: #333333;
 }
 .btn {
-    border-radius: 0;
+    border-radius:0;
     font-family: 'Open Sans', sans-serif;
     font-weight: 600;
     text-transform: uppercase;
 }
-
-.btn-normal:hover{
-    color: #333333;
-}
-
 .btn-blue{
     background-color: #1a9ff9;
     border-color: #46abf0;
@@ -189,11 +134,9 @@ body {
     margin:10px;
     padding: 10px 16px;
 }
-
 .btn-blue:hover{
     color: #333333;
 }
-
 .btn-blue-dark{
     background-color: #3c5b9b;
     border-color: #003399;
@@ -202,11 +145,9 @@ body {
     padding: 10px 16px;
     width:150px;
 }
-
 .btn-blue-dark:hover{
     color: #333333;
 }
-
 .btn-green{
     background-color: #7cc95a;
     border-color: #006600;
@@ -215,11 +156,9 @@ body {
     padding: 10px 16px;
     width:150px;
 }
-
 .btn-green:hover{
     color: #333333;
 }
-
 .btn-edit{
     background-color: #333333;
     border-color: #666666;
@@ -229,13 +168,11 @@ body {
     width:auto;
     font-size:16px;
 }
-
 .btn-edit:hover{
     color: #FFFFFF;
     background-color: #7cc95a;
     border-color: #006600;
 }
-
 .btn-yellow{
     background-color: #ffa800;
     border-color: #FFCC00;
@@ -244,37 +181,26 @@ body {
     padding: 10px 16px;
     width:150px;
 }
-
 .btn-yellow:hover{
     color: #333333;
 }
-
-
-
-h1 img {
+h1 > img {
     display: inline-block;
     margin: 5px;
 }
-
 h1.quote{
     text-shadow: 2px 2px 2px #515151;
     font-family: 'Lobster Two', cursive;
     display:none;
     font-size: 32px;
 }
-
-h1.lobster{
+h2.author {
     text-shadow: 2px 2px 2px #515151;
     font-family: 'Lobster Two', cursive;
+    display: none;
 }
 
-h2.author{
-    text-shadow: 2px 2px 2px #515151;
-    font-family: 'Lobster Two', cursive;
-    display:none;
-}
 /* Side Menu */
-
 #sidebar-wrapper {
     margin-right: -250px;
     right: 0;
@@ -304,46 +230,38 @@ h2.author{
     line-height: 40px;
     text-indent: 20px;
 }
-
 .sidebar-nav li a {
     color: #999999;
     display: block;
     text-decoration: none;
 }
-
 .sidebar-nav li a:hover {
     color: #fff;
     background: rgba(255,255,255,0.2);
     text-decoration: none;
 }
-
 .sidebar-nav li a:active,
 .sidebar-nav li a:focus {
     text-decoration: none;
 }
-
 .sidebar-nav > .sidebar-brand {
     height: 55px;
     line-height: 55px;
     font-size: 18px;
 }
-
 .sidebar-nav > .sidebar-brand a {
     color: #999999;
 }
-
 .sidebar-nav > .sidebar-brand a:hover {
     color: #fff;
     background: none;
 }
-
 #menu-toggle {
     top: 0;
     right: 0;
     position: fixed;
     z-index: 1;
 }
-
 #sidebar-wrapper.active {
     right: 250px;
     width: 250px;
@@ -353,13 +271,10 @@ h2.author{
     -o-transition: all 0.4s ease 0s;
     transition: all 0.4s ease 0s;
 }
-
 .toggle {
     margin: 5px 5px 0 0;
 }
-
 /* Full Page UserImage Header Area */
-
 header {
     display: table;
     height: 100%;
@@ -372,6 +287,19 @@ header {
     background-size: cover;
 }
 
+header > h1 {
+    color: #FFFFFF;
+    font-size: 48px;
+    font-weight: 600;
+    line-height: 1em;
+    text-shadow: 2px 2px 2px #515151;
+    margin: 0;
+}
+header > h2 {
+    margin-bottom: 40px;
+    text-shadow: 2px 2px 2px #515151;
+    font-size: 28px;
+}
 /* Kleine header */
 .small {
     display: table;
@@ -385,29 +313,13 @@ header {
     background-size: cover;
     padding-bottom:80px;
 }
-
 /* Intro */
-
 .intro {
     padding: 50px 0;
     background-color:#f8f8f8;
     background-image:url("bg-stripe.jpg");
     background-repeat:repeat;
 }
-/* Contact */
-.contact {
-    padding: 50px 0;
-    background-color:#46ABF0;
-    color:#FFF;
-    border-top:thick solid #CCCCCC;
-    border-bottom:thick solid #CCCCCC;
-}
-
-.contact ul{
-    list-style-type:none;
-    margin-left:-35px;
-}
-
 /*  Register*/
 .register{
     padding: 50px 0;
@@ -426,7 +338,6 @@ header {
     width:100px;
     height:100px;
 }
-
 img.border{
     border: 5px solid #FFFFFF;
     box-shadow: 0 0 8px #CCCCCC;
@@ -444,29 +355,23 @@ img.border{
     padding: 50px 0;
     color: #333333;
 }
-
 .search-item {
     margin-bottom: 15px;
     float:left;
 }
-
 .search-item > ul > li > img{
     height:100px;
     width:100px;
     float:left;
     display:inline;
 }
-
 .search-item a {
     color:#46ABF0;
     font-weight:800;
-
 }
-
 .search-item img {
     float:left;
 }
-
 .search-item ul{
     float:left;
     list-style:none;
@@ -478,18 +383,15 @@ img.border{
     display:block;
     position: relative;
 }
-
 .stats {
     background: #46ABF0;
     padding: 50px 0;
     color: #ffffff;
     border-bottom:thick solid #CCCCCC;
 }
-
 .stats-item {
     margin-bottom: 15px;
 }
-
 i.search-icon {
     display:inline-block;
     font-size:16px;
@@ -499,7 +401,6 @@ i.search-icon {
     float:left;
     margin-right:8px;
 }
-
 i.service-icon {
     border: 3px solid #333333;
     border-radius: 50%;
@@ -513,7 +414,6 @@ i.service-icon {
     vertical-align: middle;
     text-align: center;
 }
-
 i.service-icon-active {
     border: 3px solid #FFFFFF;
     border-radius: 50%;
@@ -527,9 +427,15 @@ i.service-icon-active {
     vertical-align: middle;
     text-align: center;
 }
-
+.service-item h4{
+    font-size:18px;
+    font-weight:800;
+}
+.service-item p{
+    font-size:18px;
+    font-weight:800;
+}
 /* Callout */
-
 .callout {
     color: #ffffff;
     display: table;
@@ -541,50 +447,37 @@ i.service-icon-active {
     -o-background-size: cover;
     background-size: cover;
 }
-
 /* Call to Action */
-
 .call-to-action {
     color: #ffffff;
     background: #46ABF0;
     padding: 50px 0;
 }
-
-.call-to-action .btn {
+.call-to-action > .btn {
     margin: 10px;
 }
-
-
 /* Footer */
-
 footer {
     height:auto;
     padding-top: 20px;
     background-color:white;
     border-top: thick solid #CCCCCC;
 }
-
-
 .top-scroll {
     margin-top: 50px;
 }
-
-.top-scroll a {
+.top-scroll > a {
     text-decoration: none;
     color: inherit;
 }
-
 i.scroll {
     color: #333333;
 }
-
 i.scroll:hover {
     color: #0a5175;
 }
 /* Responsive */
-
 @media (max-width: 768px) {
-
     header {
         background: url("header_bg.png") no-repeat center center scroll;
         -webkit-background-size: cover;
@@ -592,38 +485,9 @@ i.scroll:hover {
         -o-background-size: cover;
         background-size: cover;
     }
-
     .callout {
         background: url("dj.png") no-repeat center center scroll;
     }
-
-    .map {
-        height: 75%;
-    }
-
-
-    span.cursive {
-        display: inline-block;
-        font-family: 'Marck Script',cursive;
-        font-size: 48px;
-        font-weight: normal;
-        text-shadow: 1px 1px 2px #515151;
-    }
-
-    span.title_line {
-        border-bottom: 2px solid #FFFFFF;
-        display: inline-block;
-        height: 2px;
-        margin: 0 15px;
-        width: 25px;
-    }
-
-    span.small {
-        font-size: 28px;
-        font-weight: 600;
-        text-shadow: 2px 2px 2px #515151;
-    }
-
     header h1 {
         color: #FFFFFF;
         font-size:52px;
@@ -632,13 +496,8 @@ i.scroll:hover {
         text-shadow: 2px 2px 2px #515151;
         margin:0;
     }
-
-
-
 }
-
 @media (max-width: 1024px) and (orientation:landscape){
-
     header {
         background: url("header_bg.png") no-repeat center center scroll;
         -webkit-background-size: cover;
@@ -646,124 +505,19 @@ i.scroll:hover {
         -o-background-size: cover;
         background-size: cover;
     }
-
     .callout {
         background: url("dj.png") no-repeat center center scroll;
     }
-
-    .map {
-        height: 75%;
-    }
-
-
-    span.cursive {
-        display: inline-block;
-        font-family: 'Marck Script',cursive;
-        font-size: 48px;
-        font-weight: normal;
-        text-shadow: 1px 1px 2px #515151;
-    }
-
-    span.title_line {
-        border-bottom: 2px solid #FFFFFF;
-        display: inline-block;
-        height: 2px;
-        margin: 0 15px;
-        width: 25px;
-    }
-
-    span.small {
-        font-size: 28px;
-        font-weight: 600;
-        text-shadow: 2px 2px 2px #515151;
-    }
-
-
-
-
 }
-
-
 /* Smartphones (portrait and landscape) ----------- */
 @media only screen
 and (min-device-width : 320px)
 and (max-device-width : 480px) {
     /* Styles */
-
     .callout {
         background: url("dj.png") no-repeat center center scroll;
     }
-
 }
-
-
-
-/*Dit is de css van de form om te registreren*/
-
-/* form element visual styles */
-form input, form textarea {
-    border:1px solid #aaa;
-    box-shadow: 0px 0px 3px #ccc, 0 10px 15px #eee inset;
-    border-radius:2px;
-    padding-right:30px;
-    -moz-transition: padding .25s;
-    -webkit-transition: padding .25s;
-    -o-transition: padding .25s;
-    transition: padding .25s;
-    width:100%;
-}
-form input:focus, form textarea:focus {
-    background: #fff;
-    border:1px solid #555;
-    box-shadow: 0 0 3px #aaa;
-    padding-right:70px;
-}
-
-/* === HTML5 validation styles === */
-form input:required, form textarea:required {
-    background: #fff url("red_asterisk.png") no-repeat 98% center;
-}
-form input:required:valid, form textarea:required:valid {
-    background: #fff url("valid.png") no-repeat 98% center;
-    box-shadow: 0 0 5px #5cd053;
-    border-color: #28921f;
-}
-form input:focus:invalid, form textarea:focus:invalid {
-
-    background: #fff url("invalid.png") no-repeat 98% center;
-    box-shadow: 0 0 5px #d45252;
-    border-color: #b03535
-}
-
-
-/* === Form hints === */
-.form_hint {
-    background: #d45252;
-    border-radius: 3px 3px 3px 3px;
-    color: white;
-    margin-left:8px;
-    padding: 1px 6px;
-    z-index: 999; /* hints stay above all other elements */
-    position: absolute; /* allows proper formatting if hint is two lines */
-    display: none;
-}
-.form_hint::before {
-    content: "\25C0";
-    color:#d45252;
-    position: absolute;
-    top:1px;
-    left:-6px;
-}
-form input:focus + .form_hint {display: inline;}
-form input:required:valid + .form_hint {background: #28921f;}
-form input:required:valid + .form_hint::before {color:#28921f;}
-
-.btn-register{
-    float:right;
-}
-
-/*Register Complete */
-
 .header-image {
     background: url("header_bg.png") repeat scroll center top rgba(0, 0, 0, 0);
     display: block;
@@ -775,18 +529,14 @@ form input:required:valid + .form_hint::before {color:#28921f;}
     -o-background-size: cover;
     background-size: cover;
 }
-
 .headline {
     padding: 120px 0;
     color:#FFF;
 }
-
 .white{
     color:white;
     margin-bottom:50px;
 }
-
-
 .btn-orange{
     color: #FFFFFF;
     background-color: #FF9933;
@@ -807,61 +557,9 @@ form input:required:valid + .form_hint::before {color:#28921f;}
 .open .dropdown-toggle.btn-orange {
     background-image: none;
 }
-
-.btn-blueform{
-    color: #FFFFFF;
-    background-color: #1a9ff9;
-    border-color: #227ebd;
-    float:left;
-}
-.btn-blueform:hover,
-.btn-blueform:focus,
-.btn-blueform:active,
-.btn-blueform.active,
-.open .dropdown-toggle.btn-blueform {
-    color: #333333;
-    background-color: #ebebeb;
-    border-color: #adadad;
-}
-.btn-blueform:active,
-.btn-blueform.active,
-.open .dropdown-toggle.btn-blueform {
-    background-image: none;
-}
-
-#boekingen th {
-    background-color: #999999;
-    color: #333;
-    font-size: 1.2em;
-    padding-bottom: 4px;
-    padding-top: 5px;
-    text-align: left;
-}
-
-#boekingen td{
-    border: 1px solid #CCCCCC;
-    width:120px;
-    font-size: 1em;
-    padding: 3px 7px 2px;
-    color:#333;
-}
-
-#boekingen {
-    border-collapse: collapse;
-    float:left;
-    border: 3px solid #FFFFFF;
-    box-shadow: 0 0 8px #CCCCCC;
-}
-
-#boekingen tr.alt td {
-    background-color: #1a9ff9;
-    color: #FFFFFF;
-}
-
 img.smallprofile{
     float:left;
     margin-top:-15px;
     padding-left:30px;
     padding-right:10px;
 }
-

@@ -5,23 +5,30 @@ class UsersController < ApplicationController
   # GET /users.json
   def index
     @users = User.all
-    @hash = Gmaps4rails.build_markers(@users) do |user, marker|
-      marker.lat user.latitude
-      marker.lng user.longitude
-      marker.infowindow (user.name)
-      marker.picture({
-          "url" => "http://graph.facebook.com/#{user.uid}/picture?type=small",
-          "width" => 50,
-          "height" => 65})
-
     end
-  end
 
   # GET /users/1
   # GET /users/1.json
   def show
-
   end
+
+def regio
+  @users = User.all
+  @hash = Gmaps4rails.build_markers(@users) do |user, marker|
+  marker.lat user.latitude
+  marker.lng user.longitude
+  stringInfo = "<a href=\"/users/#{user.id}\">#{user.name}</a><br/> #{user.email} <br/> #{user.mixtapes.count} mixtapes <br/> #{user.recommendations.count} recommandaties"
+  marker.infowindow(stringInfo)
+  marker.picture({
+          "url" => "http://graph.facebook.com/#{user.uid}/picture?type=small",
+          "width" => 50,
+          "height" => 65})
+  end
+  respond_to do |format|
+    format.html { render action: 'regio'}
+    format.json { head :no_content }
+  end
+end
 
   # GET /users/new
   def new
@@ -39,7 +46,6 @@ class UsersController < ApplicationController
   # POST /users.json
   def create
     @user = User.new(user_params)
-
     respond_to do |format|
       if @user.save
         format.html { redirect_to @user, notice: 'User was successfully created.' }

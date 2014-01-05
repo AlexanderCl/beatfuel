@@ -1,6 +1,4 @@
 Beatfuel::Application.routes.draw do
-  resources :users
-
   resources :upload
   resources :uploadimage
   resources :admins do
@@ -8,7 +6,12 @@ Beatfuel::Application.routes.draw do
       get 'mixtapes'
       get 'images'
     end
+  end
 
+  resources :users do
+    collection do
+      get 'regio'
+    end
   end
 
   resources :adminsimg
