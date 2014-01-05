@@ -1,0 +1,55 @@
+<% content_for :title do %>
+    Overzicht artiesten - Beatfuel.be
+<% end %>
+<% content_for :header do %>
+    <h1>Er werden <%= @users.count %> DJ's gevonden</h1>
+    <h2>Verfijn uw zoekactie op basis van locatie</h2>
+    <div class="container">
+      <div class="collapse navbar-collapse navbar-ex1-collapse">
+        <ul class="nav-pills nav navbar pull-left">
+          <li class="active">
+            <a href="#">Overal</a>
+          </li>
+          <li>
+            <a href="#">Regio</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+<% end %>
+<div id="search" class="search">
+  <div class="container">
+    <div class="row">
+
+
+      <% @users.each do |user| %>
+
+          <div class="col-md-4">
+            <div class="search-item">
+              <%= image_tag("http://graph.facebook.com/#{user.uid}/picture?type=normal") %>
+              <ul>
+                <li>
+                  <i class="search-icon fa fa-user"></i> <%= link_to user.name, user %>
+                </li>
+                <li>
+                  <i class="search-icon fa fa-headphones"></i>  <%= user.mixtapes.count %> Mixtapes
+                </li>
+                <li>
+                  <i class="search-icon fa fa-thumbs-up"></i>
+                  <% if !user.recommendations.blank? %>
+                      <%= user.recommendations.first.amount %>
+                  <%else%>
+                      0
+                  <%end%> Recommendaties
+                </li>
+                <li>
+                  <i class="search-icon fa fa-location-arrow"></i>  <%= user.location %>
+                </li>
+              </ul>
+            </div>
+          </div>
+      <% end %>
+
+    </div>
+  </div>
+</div>

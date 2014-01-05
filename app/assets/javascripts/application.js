@@ -15,4 +15,5 @@
 //= require turbolinks
 //= require facebook
 //= require bootstrap.min
-
+//= require underscore
+//= require gmaps/google

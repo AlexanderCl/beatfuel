@@ -122,6 +122,8 @@
     <orderEntry type="library" scope="PROVIDED" name="erubis (v2.7.0, ruby-2.0.0-p195) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="execjs (v2.0.2, ruby-2.0.0-p195) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="faraday (v0.8.8, ruby-2.0.0-p195) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="geocoder (v1.1.9, ruby-2.0.0-p195) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="gmaps4rails (v2.1.1, ruby-2.0.0-p195) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="hashie (v2.0.5, ruby-2.0.0-p195) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="hike (v1.2.3, ruby-2.0.0-p195) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="httparty (v0.12.0, ruby-2.0.0-p195) [gem]" level="application" />

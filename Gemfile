@@ -40,6 +40,9 @@ gem 'carrierwave'
 
 gem 'httparty'
 
+gem 'geocoder'
+
+gem 'gmaps4rails'
 
 
 # Use ActiveModel has_secure_password
