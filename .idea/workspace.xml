@@ -44,7 +44,7 @@
       <file leaf-file-name="images.html.erb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/admins/images.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="43" column="32" selection-start="2047" selection-end="2047" vertical-scroll-proportion="0.65457183" vertical-offset="280" max-vertical-offset="1054">
+            <state line="38" column="265" selection-start="1844" selection-end="1844" vertical-scroll-proportion="0.4571843" vertical-offset="331" max-vertical-offset="1020">
               <folding />
             </state>
           </provider>
@@ -930,7 +930,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/admins/images.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="43" column="32" selection-start="2047" selection-end="2047" vertical-scroll-proportion="0.65457183" vertical-offset="280" max-vertical-offset="1054">
+        <state line="38" column="265" selection-start="1844" selection-end="1844" vertical-scroll-proportion="0.4571843" vertical-offset="331" max-vertical-offset="1020">
           <folding />
         </state>
       </provider>
