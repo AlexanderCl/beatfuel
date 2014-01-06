@@ -1,6 +1,4 @@
 @charset "utf-8";
-
-
 a {
     color: #333333;
     text-decoration: none;
@@ -15,14 +13,14 @@ ol {
     padding: 0;
     width: 100%;
 }
-ol li {
+ol > li {
     border-bottom: 1px solid #CCCCCC;
     cursor: pointer;
     margin: 0;
     padding: 9px 2px 10px;
     position: relative;
 }
-ol li a {
+ol > li > a {
     display: block;
     padding: 0 0 0 20px;
     text-indent: -3.3ex;
@@ -59,17 +57,17 @@ li.playing:before {
     position: fixed;
     width: 100%;
 }
-#shortcuts div {
+#shortcuts > div {
     margin: 0 auto;
     width: 460px;
 }
-#shortcuts h1 {
+#shortcuts > h1 {
     margin: 0 0 6px;
 }
-#shortcuts p {
+#shortcuts > p {
     margin: 0 0 18px;
 }
-#shortcuts em {
+#shortcuts > em {
     background: none repeat scroll 0 0 #D3D3D3;
     border-radius: 4px;
     box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);

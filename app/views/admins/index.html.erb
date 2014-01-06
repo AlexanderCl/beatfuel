@@ -35,7 +35,7 @@
                         <%= image_tag("http://graph.facebook.com/#{user.uid}/picture?type=normal") %>
                       <ul>
                         <li>
-                          <i class="search-icon fa fa-user"></i> <%= link_to user.name, user %>
+                          <i class="search-icon fa fa-user"></i> <%= link_to user.name, user, 'data-no-turbolink' => true %>
                         </li>
                         <li>
                           <i class="search-icon fa fa-headphones"></i>  <%= user.mixtapes.count %> Mixtapes

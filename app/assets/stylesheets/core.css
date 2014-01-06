@@ -1,6 +1,5 @@
 @charset "utf-8";
 /* CSS Document */
-
 span.cursive {
     display: inline-block;
     font-family: 'Marck Script',cursive;
@@ -91,21 +90,15 @@ body {
     color:#FFF;
     margin-top:25px;
 }
-.row > h1{
+.row h1{
     font-size:42px;
     font-weight:600;
 }
-.row > p.statsinfo{
-    font-size:24px;
-    font-weight:800;
-    color:#333;
-}
-
-.row > h3.eyecatch{
+.row h3.eyecatch{
     color:#1a9ff9;
 }
 
-.row > h4.active{
+.row h4.active{
     color:#000033;
 }
 
@@ -280,7 +273,7 @@ header {
     height: 100%;
     width: 100%;
     position: relative;
-    background: url("header_bg.png") no-repeat center center fixed;
+    background: url("header_bg.jpg") no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -306,7 +299,7 @@ header > h2 {
     height: auto;
     width: 100%;
     position: relative;
-    background: url("header_bg.png") no-repeat center center fixed;
+    background: url("header_bg.jpg") no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -345,7 +338,7 @@ img.border{
 
 .profilepage{
     padding:50px 0;
-    background-image:url("header_bg.png");
+    background-image:url("header_bg.jpg");
     background-size:cover;
 }
 /* search */
@@ -431,9 +424,10 @@ i.service-icon-active {
     font-size:18px;
     font-weight:800;
 }
-.service-item p{
-    font-size:18px;
-    font-weight:800;
+.service-item p.statsinfo{
+    color: #333333;
+    font-size: 24px;
+    font-weight: 800;
 }
 /* Callout */
 .callout {
@@ -441,7 +435,7 @@ i.service-icon-active {
     display: table;
     height: 400px;
     width: 100%;
-    background: url("dj.png") no-repeat center center fixed;
+    background: url("dj.jpg") no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -479,14 +473,14 @@ i.scroll:hover {
 /* Responsive */
 @media (max-width: 768px) {
     header {
-        background: url("header_bg.png") no-repeat center center scroll;
+        background: url("header_bg.jpg") no-repeat center center scroll;
         -webkit-background-size: cover;
         -moz-background-size: cover;
         -o-background-size: cover;
         background-size: cover;
     }
     .callout {
-        background: url("dj.png") no-repeat center center scroll;
+        background: url("dj.jpg") no-repeat center center scroll;
     }
     header h1 {
         color: #FFFFFF;
@@ -499,14 +493,14 @@ i.scroll:hover {
 }
 @media (max-width: 1024px) and (orientation:landscape){
     header {
-        background: url("header_bg.png") no-repeat center center scroll;
+        background: url("header_bg.jpg") no-repeat center center scroll;
         -webkit-background-size: cover;
         -moz-background-size: cover;
         -o-background-size: cover;
         background-size: cover;
     }
     .callout {
-        background: url("dj.png") no-repeat center center scroll;
+        background: url("dj.jpg") no-repeat center center scroll;
     }
 }
 /* Smartphones (portrait and landscape) ----------- */
@@ -515,11 +509,11 @@ and (min-device-width : 320px)
 and (max-device-width : 480px) {
     /* Styles */
     .callout {
-        background: url("dj.png") no-repeat center center scroll;
+        background: url("dj.jpg") no-repeat center center scroll;
     }
 }
 .header-image {
-    background: url("header_bg.png") repeat scroll center top rgba(0, 0, 0, 0);
+    background: url("header_bg.jpg") repeat scroll center top rgba(0, 0, 0, 0);
     display: block;
     height: auto;
     text-align: center;
