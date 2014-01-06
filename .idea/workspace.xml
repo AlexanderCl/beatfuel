@@ -50,10 +50,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="application.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="application.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/assets/javascripts/application.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="0" selection-start="159" selection-end="159" vertical-scroll-proportion="0.1773142" vertical-offset="0" max-vertical-offset="767">
+            <state line="5" column="16" selection-start="101" selection-end="110" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="238">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="bootstrap.js" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/assets/javascripts/bootstrap.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="21" column="75" selection-start="919" selection-end="990" vertical-scroll-proportion="0.4734748" vertical-offset="0" max-vertical-offset="34085">
               <folding>
                 <element signature="n#!!doc" expanded="true" />
               </folding>
@@ -150,7 +159,6 @@
         <option value="$PROJECT_DIR$/app/controllers/upload_controller.rb" />
         <option value="$PROJECT_DIR$/app/models/user_image.rb" />
         <option value="$PROJECT_DIR$/app/models/mixtape.rb" />
-        <option value="$PROJECT_DIR$/app/assets/javascripts/bootstrap.js" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/bootstrap.css" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/bootstrap.min.css" />
         <option value="$PROJECT_DIR$/config/environments/production.rb" />
@@ -158,6 +166,7 @@
         <option value="$PROJECT_DIR$/app/views/shared/_nav.html.erb" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/application.css" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/application.js" />
+        <option value="$PROJECT_DIR$/app/assets/javascripts/bootstrap.js" />
       </list>
     </option>
   </component>
@@ -751,13 +760,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://C:/RailsInstaller/Ruby2.0.0/lib/ruby/gems/2.0.0/gems/jquery-rails-3.0.4/vendor/assets/javascripts/jquery.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="590" column="399" selection-start="142710" selection-end="142710" vertical-scroll-proportion="0.9512894" vertical-offset="9366" max-vertical-offset="10693">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://C:/RailsInstaller/Ruby2.0.0/lib/ruby/gems/2.0.0/gems/gmaps4rails-2.1.1/vendor/assets/javascripts/gmaps/google/builders/bound.coffee">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="68" selection-start="68" selection-end="68" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="711" />
@@ -1017,16 +1019,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/bootstrap.js">
+    <entry file="file://C:/RailsInstaller/Ruby2.0.0/lib/ruby/gems/2.0.0/gems/jquery-rails-3.0.4/vendor/assets/javascripts/jquery.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="71" column="47" selection-start="4706" selection-end="4706" vertical-scroll-proportion="0.2480106" vertical-offset="1020" max-vertical-offset="10030">
+        <state line="590" column="399" selection-start="142710" selection-end="142710" vertical-scroll-proportion="6.05457" vertical-offset="5592" max-vertical-offset="10693">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/javascripts/application.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="0" selection-start="159" selection-end="159" vertical-scroll-proportion="0.1773142" vertical-offset="0" max-vertical-offset="767">
+        <state line="5" column="16" selection-start="101" selection-end="110" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="238">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/bootstrap.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="75" selection-start="919" selection-end="990" vertical-scroll-proportion="0.4734748" vertical-offset="0" max-vertical-offset="34085">
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>
