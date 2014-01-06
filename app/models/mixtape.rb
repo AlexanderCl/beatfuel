@@ -1,6 +1,6 @@
 class Mixtape < ActiveRecord::Base
   belongs_to :user
-
+  validates :src, :title, :presence => true
   def self.upload(file, user)
 
     name =  file['datafile'].original_filename

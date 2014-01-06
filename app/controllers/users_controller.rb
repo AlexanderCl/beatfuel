@@ -17,7 +17,7 @@ def regio
   @hash = Gmaps4rails.build_markers(@users) do |user, marker|
   marker.lat user.latitude
   marker.lng user.longitude
-  stringInfo = "<a href=\"/users/#{user.id}\">#{user.name}</a><br/> #{user.email} <br/> #{user.mixtapes.count} mixtapes <br/> #{user.recommendations.count} recommandaties"
+  stringInfo = "<a data-no-turbolink='true' href=\"/users/#{user.id}\">#{user.name}</a><br/> #{user.email} <br/> #{user.mixtapes.count} mixtapes <br/> #{user.recommendations.count} recommandaties"
   marker.infowindow(stringInfo)
   marker.picture({
           "url" => "http://graph.facebook.com/#{user.uid}/picture?type=small",

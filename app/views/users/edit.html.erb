@@ -20,17 +20,11 @@
         <div class="col-md-5 col-md-offset-1">
           <h1>Mixtapes</h1>
           <% if !@user.mixtapes.blank? %>
-          <div id="audiojs_wrapper0" classname="audiojs" class="audiojs  ">
-            <audio src="/mixtapes/<%= @user.uid %>/<%= @user.mixtapes.first.src %>" preload=""></audio>
-            <div class="play-pause"><p class="play"></p><p class="pause"></p><p class="loading"></p><p class="error"></p>
-            </div><div class="scrubber"><div style="width: 100%;" class="progress"></div><div style="width: 100%;" class="loaded"></div>      </div>
-            <div class="time"><em class="played">00:01</em>/<strong class="duration">03:56</strong></div>
-            <div class="error-message"></div></div>
-          <ol>
-            <% @user.mixtapes.each do |mix| %>
-                <li><a href="#" data-src="/mixtapes/<%= @user.uid %>/<%= mix.src %>"><%= mix.title %></a></li>
-            <% end %>
-          </ol>
+                  <ul>
+                    <% @user.mixtapes.each do |mix| %>
+                        <li><%= mix.title %> <%= link_to '<i class="fa fa-trash-o"></i>'.html_safe, usermix_path(mix.id), :confirm => 'Are you sure you want to delete this mixtape', :method => :delete %></li>
+                    <% end %>
+                  </ul>
           <% else %>
               Nog geen mixtapes beschikbaar
           <% end %>

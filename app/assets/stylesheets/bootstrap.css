@@ -157,6 +157,16 @@ textarea {
   font-size: 100%;
 }
 
+.field button,
+input,
+select,
+textarea{
+    margin: 0;
+    font-family: inherit;
+    font-size: 100%;
+    width:100%
+}
+
 button,
 input {
   line-height: normal;

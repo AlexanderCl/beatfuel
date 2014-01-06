@@ -4,8 +4,8 @@ class UploadController  < ApplicationController
   def create
     ufile = params[:mp3file]['datafile']
     if ufile.content_type != "mp3" && ufile.content_type != "audio/mp3"
-      flash[:error] = 'Onjuist formaat!'
       redirect_to user_path(current_user)
+      flash[:error] = 'Onjuist formaat!'
       return
     else
     post = Mixtape.upload(params[:mp3file], current_user)
