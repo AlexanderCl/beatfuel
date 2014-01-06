@@ -3,6 +3,6 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require facebook
-//= require bootstrap.min
+//= require bootstrap
 //= require underscore
 //= require gmaps/google
