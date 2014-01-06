@@ -4,7 +4,7 @@ $.ajax
   cache: true
 
 window.fbAsyncInit = ->
-  FB.init(appId: '542813182473001', cookie: true)
+  FB.init(appId: '542813182473001', status: true, xfbml: true, oauth: true,  cookie: true)
 
   $('.fb_sign_in').click (e) ->
     e.preventDefault()
