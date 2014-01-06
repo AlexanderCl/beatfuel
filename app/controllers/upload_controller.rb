@@ -9,7 +9,6 @@ class UploadController  < ApplicationController
       return
     else
     post = Mixtape.upload(params[:mp3file], current_user)
-
     redirect_to user_path(current_user)
     flash[:notice] = 'Mixtape succesvol toegevoegd!'
   end
