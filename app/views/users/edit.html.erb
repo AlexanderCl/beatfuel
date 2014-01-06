@@ -22,7 +22,7 @@
           <% if !@user.mixtapes.blank? %>
                   <ul>
                     <% @user.mixtapes.each do |mix| %>
-                        <li><%= mix.title %> <%= link_to '<i class="fa fa-trash-o"></i>'.html_safe, usermix_path(mix.id), :confirm => 'Are you sure you want to delete this mixtape', :method => :delete %></li>
+                        <li><%= mix.title %> <%= link_to '<i class="fa fa-trash-o"></i>'.html_safe, usermix_path(mix.id), :confirm => 'Zeker dat u deze mixtape wil verwijderen?', :method => :delete %></li>
                     <% end %>
                   </ul>
           <% else %>
@@ -34,7 +34,7 @@
                              :data => {
                                      :max_file_size => 5.megabytes
                              } %>
-              <input name='commit' type='submit' value='Nummer toevoegen' data-confirm="Zeker dat je deze mixtape wilt toevoegen?">
+              <input name='commit' type='submit' value='Nummer toevoegen' data-confirm="Zeker dat u deze mixtape wilt toevoegen?">
 
           <% end %>
 
@@ -42,7 +42,7 @@
           <% if !@user.user_images.blank? %>
               <% @user.user_images.each do |img| %>
                   <a href="/images/<%= @user.uid %>/<%= img.image_url %>">
-                   <img src="/images/<%= @user.uid %>/<%= img.image_url %>"><%= link_to '<i class="fa fa-trash-o"></i>'.html_safe, userimg_path(img.id), :confirm => 'Are you sure you want to delete this image', :method => :delete %></img>
+                   <img src="/images/<%= @user.uid %>/<%= img.image_url %>"><%= link_to '<i class="fa fa-trash-o"></i>'.html_safe, userimg_path(img.id), :confirm => 'Zeker dat u deze mixtape wilt verwijderen?', :method => :delete %></img>
                   </a>
               <% end %>
 
@@ -51,14 +51,12 @@
           <% end %>
           <h2>Afbeeldingen toevoegen</h2>
 
-
           <%= form_tag uploadimage_index_path, :multipart => true do %>
               <%= file_field 'imgfile', 'datafile',
                              :data => {
                                      :max_file_size => 5.megabytes
                              } %>
-
-              <%= submit_tag "Afbeelding toevoegen" %>
+              <%= submit_tag "Afbeelding toevoegen", :confirm => 'Zeker dat u deze afbeelding wilt toevoegen?'%>
           <% end %>
 
 

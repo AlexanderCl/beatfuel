@@ -26,7 +26,6 @@
       <div id="search" class="search">
         <div class="container">
           <div class="row">
-
             <% @users.each do |user| %>
                 <% if !user.user_images.blank? %>
                     <div class="col-md-12">
@@ -41,12 +40,13 @@
                               <div class="clearfix"></div>
                           </li>
                           <% end %>
+                            <% else %>
+                            Geen afbeeldingen
+                            <% end %>
                         </ul>
                       </div>
                     </div>
-                <% else %>
-                    Geen afbeeldingen beschikbaar
-                <% end %>
+
             <% end %>
           </div>
         </div>
