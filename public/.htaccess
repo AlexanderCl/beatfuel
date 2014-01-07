@@ -3,4 +3,4 @@ Options -MultiViews
         	#Set this to whatever environment you'll be running in
         	RailsEnv production
         	RackBaseURI /
-        	SetEnv GEM_HOME ../
+        	SetEnv GEM_HOME ../Gemfile
