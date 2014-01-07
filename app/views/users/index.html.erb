@@ -36,7 +36,7 @@
                 <li>
                   <i class="search-icon fa fa-thumbs-up"></i>
                   <% if !user.recommendations.blank? %>
-                      <%= has_recommendations(user.id) %>
+                      <%= user.recommendations.count %>
                   <%else%>
                       0
                   <%end%> Recommendaties

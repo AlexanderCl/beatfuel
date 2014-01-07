@@ -19,7 +19,7 @@
                   <li><i class="fa fa-tags"></i> <%= @user.user_information.music_genre %></li>
                   <li><i class="fa fa-thumbs-up"></i>
                     <% if !@user.recommendations.blank? %>
-                        <%= has_recommendations(user.id) %>
+                        <%= @user.uid.recommendations.count %>
                     <%else%>
                         0
                     <%end%> Recommendaties
