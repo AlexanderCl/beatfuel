@@ -62,7 +62,6 @@ html,
 body {
     height: 100%;
     width: 100%;
-    font-family:"helvetica"
 }
 .vert-text {
     text-align: center;
@@ -135,7 +134,7 @@ body {
 }
 .btn {
     border-radius:0;
-    font-family: 'open_sansregular'', sans-serif;
+    font-family: 'open_sansregular', sans-serif;
     font-weight: 600;
     text-transform: uppercase;
 }
@@ -202,13 +201,13 @@ h1 > img {
 }
 h1.quote{
     text-shadow: 2px 2px 2px #515151;
-    font-family: 'lobster_tworegular', cursive;
+    font-family: "lobster two", "open sans";
     display:none;
     font-size: 32px;
 }
 h2.author {
     text-shadow: 2px 2px 2px #515151;
-    font-family: 'lobster_tworegular', cursive;
+    font-family: "lobster two", "open sans";
     display: none;
 }
 
