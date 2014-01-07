@@ -3,15 +3,12 @@
 <script type="text/javascript">
     var geocoder;
     var map;
-
         function initialize() {
             geocoder = new google.maps.Geocoder();
             if (navigator.geolocation) {
                 navigator.geolocation.getCurrentPosition(successFunction, errorFunction);
             }
         }
-
-
     //Get the latitude and the longitude;
     function successFunction(position) {
         var lat = position.coords.latitude;

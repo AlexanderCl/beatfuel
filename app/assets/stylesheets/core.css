@@ -1,12 +1,30 @@
 @charset "utf-8";
 /* CSS Document */
-span.cursive {
-    display: inline-block;
-    font-family: 'Marck Script',cursive;
-    font-size: 68px;
+
+@font-face {
+    font-family: 'lobster_tworegular';
+    src: url('../fonts/lobstertwo-regular.eot');
+    src: url('../fonts/lobstertwo-regular.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/lobstertwo-regular.woff') format('woff'),
+    url('../fonts/lobstertwo-regular.ttf') format('truetype'),
+    url('../fonts/lobstertwo-regular.svg#lobster_tworegular') format('svg');
     font-weight: normal;
-    text-shadow: 1px 1px 2px #515151;
+    font-style: normal;
+
 }
+
+@font-face {
+    font-family: 'open_sansregular';
+    src: url('../fonts/opensans-regular.eot');
+    src: url('../fonts/opensans-regular.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/opensans-regular.woff') format('woff'),
+    url('../fonts/opensans-regular.ttf') format('truetype'),
+    url('../fonts/opensans-regular.svg#open_sansregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
 span.title_line {
     border-bottom: 2px solid #FFFFFF;
     display: inline-block;
@@ -117,7 +135,7 @@ body {
 }
 .btn {
     border-radius:0;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'open_sansregular'', sans-serif;
     font-weight: 600;
     text-transform: uppercase;
 }
@@ -184,13 +202,13 @@ h1 > img {
 }
 h1.quote{
     text-shadow: 2px 2px 2px #515151;
-    font-family: 'Lobster Two', cursive;
+    font-family: 'lobster_tworegular', cursive;
     display:none;
     font-size: 32px;
 }
 h2.author {
     text-shadow: 2px 2px 2px #515151;
-    font-family: 'Lobster Two', cursive;
+    font-family: 'lobster_tworegular', cursive;
     display: none;
 }
 
