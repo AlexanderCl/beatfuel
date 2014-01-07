@@ -23,8 +23,12 @@ class ApplicationController < ActionController::Base
     false
   end
 
-  helper_method :has_recommended
+  def has_recommendations(profile_id)
+      Recommendation.find_all_by_profile_id(profile_id).count
+  end
 
+  helper_method :has_recommended
+  helper_method :has_recommendations
   helper_method :current_user
   helper_method :current_admin
 end
