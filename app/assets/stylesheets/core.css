@@ -44,6 +44,7 @@ html,
 body {
     height: 100%;
     width: 100%;
+    font-family:"helvetica"
 }
 .vert-text {
     text-align: center;
