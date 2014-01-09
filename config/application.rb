@@ -19,6 +19,8 @@ module Beatfuel
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
-    config.middleware.swap(ActionDispatch::Static, Rack::Zippy::AssetServer)
+
+    #Dit deed onze pagespeed omhoog, maar dan werken de foto's & mixtapes niet meer naar behoren...
+    #config.middleware.swap(ActionDispatch::Static, Rack::Zippy::AssetServer)
   end
 end

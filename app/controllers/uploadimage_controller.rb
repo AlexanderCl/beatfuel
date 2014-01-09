@@ -9,7 +9,7 @@ class UploadimageController < ApplicationController
 
   def create
     ufile = params[:imgfile]['datafile']
-    if ufile.content_type != "gif" && ufile.content_type != "jpg" && ufile.content_type != "png" && ufile.content_type != "image/png" && ufile.content_type != "image/gif" && ufile.content_type != "image/jpg"
+    if ufile.content_type != "gif" && ufile.content_type != "jpg" && ufile.content_type != "png" && ufile.content_type != "image/png" && ufile.content_type != "image/jpeg" && ufile.content_type != "image/gif" && ufile.content_type != "image/jpg"
       flash[:error] = 'Onjuist formaat!'
       redirect_to user_path(current_user)
       return

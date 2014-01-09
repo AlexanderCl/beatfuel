@@ -3,7 +3,7 @@ class UploadController  < ApplicationController
 
   def create
     ufile = params[:mp3file]['datafile']
-    if ufile.content_type != "mp3" && ufile.content_type != "audio/mp3"
+    if ufile.content_type != "mp3" && ufile.content_type != "audio/mp3" && ufile.content_type != "audio/mpeg"
       redirect_to user_path(current_user)
       flash[:error] = 'Onjuist formaat!'
       return
